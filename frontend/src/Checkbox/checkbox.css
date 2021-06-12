@@ -1,0 +1,27 @@
+
+.checkbox-container{
+    display: inline-flex; 
+    cursor: pointer;
+}
+
+.checkbox{
+    width: 20px;
+    height: 20px;
+    border:1px solid #EBEBEB;
+    border-radius: 4px;
+    background-color: white;
+
+}
+.checkbox-checked{
+    width: 20px;
+    height: 20px;
+    background-color: #FD5A5F;
+    border-color:#FD5A5F;
+    box-sizing: border-box;
+}
+.checkbox-label{
+    margin-left: 20px;
+    margin-left: 15px;
+    line-height: 1.4;
+    color:#484848;
+}

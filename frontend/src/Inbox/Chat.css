@@ -1,0 +1,9 @@
+.react-responsive-modal-modal{
+    padding:0px!important;
+}
+
+.react-responsive-modal-closeButton{
+    top:23px!important;
+    background-color: rgb(255, 255, 255)!important;
+    border-radius: 7px!important;
+}

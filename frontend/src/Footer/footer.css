@@ -1,0 +1,22 @@
+
+
+
+.footer{
+    color:white;
+    background-color:black;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding:30px;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 1082px) {
+   .w-50-mob{
+       width: 50%!important;
+       box-sizing: border-box;
+       padding:10px;
+   }
+}

@@ -1,0 +1,10 @@
+.widget {
+  display: inline-flex;
+  color: white;
+  background-color: black;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 7px;
+}
+
+/*# sourceMappingURL=Widget.css.map */

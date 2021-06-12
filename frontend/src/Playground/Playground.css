@@ -1,0 +1,30 @@
+
+
+
+.container{
+    display: inline-flex;
+    width: 100%;
+}
+.step{
+    width: 100%;
+    display: inline-flex;
+}
+.step.final {
+    width: auto;
+}
+.line{
+    height: 2px;
+    width: 100%;
+    background-color: #EAEAEA;
+    margin: auto;
+}
+.ball{
+    height: 15px;
+    width: 15px;
+    background-color: #EAEAEA;
+    border-radius: 50%; 
+}
+
+.reached{
+    background-color:#FD5A5F;
+}

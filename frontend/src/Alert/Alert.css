@@ -1,0 +1,31 @@
+
+
+
+
+.alert {
+    min-height: 50px;
+    background-color: #F4F4F4;
+    border:1px solid #EBEBEB;
+    border-radius: 7px;
+    display: inline-flex;
+}
+.alert.error{
+    background-color: #FFDADB;
+    border-color:#FFB4B7;
+}
+.alert-icon{
+    box-sizing: border-box;
+    padding:15px;
+    width: 50px;
+}
+.alert-icon>img{
+    margin: auto;
+}
+
+.alert-msg{
+    box-sizing: border-box;
+    padding:16px;
+    padding-left:0px;
+    font-size: 15px;
+    color:#0e121a;
+}

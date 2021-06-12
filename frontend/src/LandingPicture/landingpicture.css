@@ -1,0 +1,55 @@
+
+
+
+.landing-picture-container{
+    min-height:440px;
+    background-size: cover;
+    background-image:url('https://lp-cms-production.imgix.net/features/2018/06/byrsa-hill-carthage-tunis-tunisia-2d96efe7b9bf.jpg');
+    background-position: top;
+    border-radius: 10px;
+    position: relative;
+}
+
+.landing-picture-overlay{
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #0000008a;
+    border-radius: 10px;
+    text-align: center;
+    padding-top:10%;
+}
+
+.landing-picture-overlay>.wraper>h1{
+    font-size: 45px;
+    color:white;
+    font-family: 'mulish';
+    margin:0;
+    text-align: center;
+}
+
+.landing-picture-overlay>.wraper>span.subtitle{
+    font-size: 20px;
+    color:rgba(255, 255, 255, 0.769);
+    font-family: 'mulish';
+    text-align: center;
+
+}
+
+
+@media screen and (max-width: 1082px) {
+    .landing-picture-overlay>.wraper>h1{
+        font-size: 35px;
+    }
+    .landing-picture-overlay>.wraper>span.subtitle{
+        font-size: 15px;
+    }
+    .landing-picture-overlay{
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .landing-picture-container{
+        min-height: 460px;
+    }
+}

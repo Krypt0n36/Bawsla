@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="213.919" height="72" viewBox="0 0 213.919 72">
+  <g id="Group_198" data-name="Group 198" transform="translate(-119.5 -592)">
+    <g id="Group_86" data-name="Group 86" transform="translate(121 591.796)">
+      <text id="Bawsla" transform="translate(51.419 48.204)" fill="#232e43" font-size="53" font-family="PTSans-Bold, PT Sans" font-weight="700"><tspan x="0" y="0">Bawsla</tspan></text>
+      <g id="Icon_feather-compass" data-name="Icon feather-compass" transform="translate(0 11.722)">
+        <path id="Path_64" data-name="Path 64" d="M43.652,23.326A20.326,20.326,0,1,1,23.326,3,20.326,20.326,0,0,1,43.652,23.326Z" transform="translate(-3 -3)" fill="#fd5a5f" stroke="#fd5a5f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_65" data-name="Path 65" d="M28.877,11.64,24.567,24.567,11.64,28.877l4.309-12.927Z" transform="translate(0.068 0.068)" fill="#fff"/>
+      </g>
+    </g>
+    <text id="MARKETPLACE" transform="translate(175 659)" fill="#292929" font-size="18" font-family="PTSans-Bold, PT Sans" font-weight="700" letter-spacing="0.1em"><tspan x="0" y="0">MARKETPLACE</tspan></text>
+  </g>
+</svg>

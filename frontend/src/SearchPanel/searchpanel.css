@@ -1,0 +1,38 @@
+
+
+
+
+.searchPanelBack{
+    background-color: rgba(203, 203, 203, 0.74);
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding:5px;
+    width: 70%;
+    margin:auto;
+}
+.searchPanel{
+    border-radius: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-sizing: border-box;
+    padding:5px;
+}
+
+.searchPanel-col{
+    box-sizing: border-box;
+    width: 25%;
+    padding:5px;
+}
+
+@media screen and (max-width: 1082px) {
+    .searchPanel-col{
+        width: 100%;
+    }
+    .searchPanelBack{
+        width: 90%;
+        
+    }
+}

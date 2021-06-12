@@ -1,0 +1,1085 @@
+{
+    "2":{
+       "name":"Ariana",
+       "regions":{
+          "22":{
+             "name":"Ariana Ville"
+          },
+          "285":{
+             "name":"Borj El Baccouch"
+          },
+          "286":{
+             "name":"Borj Louzir"
+          },
+          "287":{
+             "name":"Borj Touil"
+          },
+          "288":{
+             "name":"Cebelet Ben Ammar"
+          },
+          "289":{
+             "name":"Charguia II"
+          },
+          "290":{
+             "name":"Cité El Ghazela"
+          },
+          "264":{
+             "name":"Ennasr 1"
+          },
+          "303":{
+             "name":"ennasr 2"
+          },
+          "23":{
+             "name":"Ettadhamen"
+          },
+          "24":{
+             "name":"Kalaat Landlous"
+          },
+          "25":{
+             "name":"La Soukra"
+          },
+          "292":{
+             "name":"menzah 1"
+          },
+          "296":{
+             "name":"menzah 5"
+          },
+          "293":{
+             "name":"Menzah 6"
+          },
+          "299":{
+             "name":"Menzah 7"
+          },
+          "294":{
+             "name":"Menzah 8"
+          },
+          "26":{
+             "name":"Mnihla"
+          },
+          "27":{
+             "name":"Raoued"
+          },
+          "295":{
+             "name":"Riadh El Andalous"
+          },
+          "28":{
+             "name":"Sidi Thabet"
+          }
+       }
+    },
+    "8":{
+       "name":"Béja",
+       "regions":{
+          "85":{
+             "name":"Amdoun"
+          },
+          "86":{
+             "name":"Beja Nord"
+          },
+          "87":{
+             "name":"Beja Sud"
+          },
+          "88":{
+             "name":"Goubellat"
+          },
+          "89":{
+             "name":"Mejez El Bab"
+          },
+          "90":{
+             "name":"Nefza"
+          },
+          "91":{
+             "name":"Teboursouk"
+          },
+          "92":{
+             "name":"Testour"
+          },
+          "93":{
+             "name":"Thibar"
+          }
+       }
+    },
+    "3":{
+       "name":"Ben Arous",
+       "regions":{
+          "29":{
+             "name":"Ben Arous"
+          },
+          "300":{
+             "name":"Bir El Bey"
+          },
+          "301":{
+             "name":"Bir El Kassaa"
+          },
+          "302":{
+             "name":"Borj Cedria"
+          },
+          "30":{
+             "name":"Bou Mhel El Bassatine"
+          },
+          "304":{
+             "name":"Boukornine"
+          },
+          "31":{
+             "name":"El Mourouj"
+          },
+          "307":{
+             "name":"El Yasminette"
+          },
+          "32":{
+             "name":"Ezzahra"
+          },
+          "33":{
+             "name":"Fouchana"
+          },
+          "34":{
+             "name":"Hammam Chatt"
+          },
+          "35":{
+             "name":"Hammam Lif"
+          },
+          "308":{
+             "name":"Khelidia"
+          },
+          "36":{
+             "name":"Megrine"
+          },
+          "37":{
+             "name":"Mohamadia"
+          },
+          "38":{
+             "name":"Mornag"
+          },
+          "305":{
+             "name":"Mourouj 1"
+          },
+          "306":{
+             "name":"Mourouj 3"
+          },
+          "328":{
+             "name":"Mourouj 4"
+          },
+          "326":{
+             "name":"Mourouj 5"
+          },
+          "327":{
+             "name":"Mourouj 6"
+          },
+          "309":{
+             "name":"Naassen"
+          },
+          "39":{
+             "name":"Nouvelle Medina"
+          },
+          "40":{
+             "name":"Rades"
+          }
+       }
+    },
+    "7":{
+       "name":"Bizerte",
+       "regions":{
+          "71":{
+             "name":"Bizerte Nord"
+          },
+          "72":{
+             "name":"Bizerte Sud"
+          },
+          "73":{
+             "name":"El Alia"
+          },
+          "74":{
+             "name":"Ghar El Melh"
+          },
+          "75":{
+             "name":"Ghezala"
+          },
+          "77":{
+             "name":"Joumine"
+          },
+          "78":{
+             "name":"Mateur"
+          },
+          "79":{
+             "name":"Menzel Bourguiba"
+          },
+          "80":{
+             "name":"Menzel Jemil"
+          },
+          "81":{
+             "name":"Ras Jebel"
+          },
+          "82":{
+             "name":"Sejnane"
+          },
+          "83":{
+             "name":"Tinja"
+          },
+          "84":{
+             "name":"Utique"
+          },
+          "76":{
+             "name":"Zarzouna"
+          }
+       }
+    },
+    "22":{
+       "name":"Gabes",
+       "regions":{
+          "236":{
+             "name":"El Hamma"
+          },
+          "237":{
+             "name":"El Metouia"
+          },
+          "238":{
+             "name":"Gabes Medina"
+          },
+          "239":{
+             "name":"Gabes Ouest"
+          },
+          "240":{
+             "name":"Gabes Sud"
+          },
+          "241":{
+             "name":"Ghannouche"
+          },
+          "242":{
+             "name":"Mareth"
+          },
+          "243":{
+             "name":"Matmata"
+          },
+          "244":{
+             "name":"Menzel Habib"
+          },
+          "245":{
+             "name":"Nouvelle Matmata"
+          }
+       }
+    },
+    "19":{
+       "name":"Gafsa",
+       "regions":{
+          "215":{
+             "name":"Belkhir"
+          },
+          "216":{
+             "name":"El Guettar"
+          },
+          "217":{
+             "name":"El Ksar"
+          },
+          "218":{
+             "name":"El Mdhilla"
+          },
+          "219":{
+             "name":"Gafsa Nord"
+          },
+          "220":{
+             "name":"Gafsa Sud"
+          },
+          "221":{
+             "name":"Metlaoui"
+          },
+          "222":{
+             "name":"Moulares"
+          },
+          "223":{
+             "name":"Redeyef"
+          },
+          "224":{
+             "name":"Sidi Aich"
+          },
+          "225":{
+             "name":"Sned"
+          }
+       }
+    },
+    "9":{
+       "name":"Jendouba",
+       "regions":{
+          "94":{
+             "name":"Ain Draham"
+          },
+          "95":{
+             "name":"Balta Bou Aouene"
+          },
+          "96":{
+             "name":"Bou Salem"
+          },
+          "97":{
+             "name":"Fernana"
+          },
+          "98":{
+             "name":"Ghardimaou"
+          },
+          "99":{
+             "name":"Jendouba"
+          },
+          "100":{
+             "name":"Jendouba Nord"
+          },
+          "101":{
+             "name":"Oued Mliz"
+          },
+          "102":{
+             "name":"Tabarka"
+          }
+       }
+    },
+    "12":{
+       "name":"Kairouan",
+       "regions":{
+          "126":{
+             "name":"Bou Hajla"
+          },
+          "127":{
+             "name":"Chebika"
+          },
+          "128":{
+             "name":"Cherarda"
+          },
+          "129":{
+             "name":"El Ala"
+          },
+          "130":{
+             "name":"Haffouz"
+          },
+          "131":{
+             "name":"Hajeb El Ayoun"
+          },
+          "132":{
+             "name":"Kairouan Nord"
+          },
+          "133":{
+             "name":"Kairouan Sud"
+          },
+          "134":{
+             "name":"Nasrallah"
+          },
+          "135":{
+             "name":"Oueslatia"
+          },
+          "136":{
+             "name":"Sbikha"
+          }
+       }
+    },
+    "13":{
+       "name":"Kasserine",
+       "regions":{
+          "329":{
+             "name":"Al Zouhour"
+          },
+          "137":{
+             "name":"El Ayoun"
+          },
+          "139":{
+             "name":"Feriana"
+          },
+          "140":{
+             "name":"Foussana"
+          },
+          "141":{
+             "name":"Haidra"
+          },
+          "142":{
+             "name":"Hassi El Frid"
+          },
+          "143":{
+             "name":"Jediliane"
+          },
+          "144":{
+             "name":"Kasserine Nord"
+          },
+          "145":{
+             "name":"Kasserine Sud"
+          },
+          "146":{
+             "name":"Mejel Bel Abbes"
+          },
+          "147":{
+             "name":"Sbeitla"
+          },
+          "148":{
+             "name":"Sbiba"
+          },
+          "149":{
+             "name":"Thala"
+          }
+       }
+    },
+    "21":{
+       "name":"Kebili",
+       "regions":{
+          "231":{
+             "name":"Douz"
+          },
+          "232":{
+             "name":"El Faouar"
+          },
+          "233":{
+             "name":"Kebili Nord"
+          },
+          "234":{
+             "name":"Kebili Sud"
+          },
+          "235":{
+             "name":"Souk El Ahad"
+          }
+       }
+    },
+    "4":{
+       "name":"La Manouba",
+       "regions":{
+          "41":{
+             "name":"Borj El Amri"
+          },
+          "311":{
+             "name":"Borj Etoumi"
+          },
+          "312":{
+             "name":"Chabbaou"
+          },
+          "313":{
+             "name":"Chaouat"
+          },
+          "314":{
+             "name":"Complexe Universitaire "
+          },
+          "315":{
+             "name":"Denden"
+          },
+          "42":{
+             "name":"Douar Hicher"
+          },
+          "316":{
+             "name":"Eddkhila"
+          },
+          "43":{
+             "name":"El Battan"
+          },
+          "317":{
+             "name":"El Fejja"
+          },
+          "44":{
+             "name":"Jedaida"
+          },
+          "45":{
+             "name":"Mannouba"
+          },
+          "46":{
+             "name":"Mornaguia"
+          },
+          "47":{
+             "name":"Oued Ellil"
+          },
+          "48":{
+             "name":"Tebourba"
+          }
+       }
+    },
+    "10":{
+       "name":"Le Kef",
+       "regions":{
+          "103":{
+             "name":"Dahmani"
+          },
+          "104":{
+             "name":"El Ksour"
+          },
+          "105":{
+             "name":"Jerissa"
+          },
+          "106":{
+             "name":"Kalaa El Khasba"
+          },
+          "107":{
+             "name":"Kalaat Sinane"
+          },
+          "108":{
+             "name":"Le Kef Est"
+          },
+          "109":{
+             "name":"Le Kef Ouest"
+          },
+          "110":{
+             "name":"Le Sers"
+          },
+          "111":{
+             "name":"Nebeur"
+          },
+          "112":{
+             "name":"Sakiet Sidi Youssef"
+          },
+          "113":{
+             "name":"Tajerouine"
+          },
+          "114":{
+             "name":"Touiref"
+          }
+       }
+    },
+    "17":{
+       "name":"Mahdia",
+       "regions":{
+          "189":{
+             "name":"Bou Merdes"
+          },
+          "190":{
+             "name":"Chorbane"
+          },
+          "191":{
+             "name":"El Jem"
+          },
+          "192":{
+             "name":"Hbira"
+          },
+          "193":{
+             "name":"Ksour Essaf"
+          },
+          "194":{
+             "name":"La Chebba"
+          },
+          "195":{
+             "name":"Mahdia"
+          },
+          "196":{
+             "name":"Melloulech"
+          },
+          "197":{
+             "name":"Ouled Chamakh"
+          },
+          "198":{
+             "name":"Sidi Alouene"
+          },
+          "199":{
+             "name":"Souassi"
+          }
+       }
+    },
+    "23":{
+       "name":"Médenine",
+       "regions":{
+          "246":{
+             "name":"Ajim"
+          },
+          "247":{
+             "name":"Ben Guerdane"
+          },
+          "248":{
+             "name":"Beni Khedache"
+          },
+          "249":{
+             "name":"Houmet Essouk"
+          },
+          "250":{
+             "name":"Medenine Nord"
+          },
+          "251":{
+             "name":"Medenine Sud"
+          },
+          "252":{
+             "name":"Midoun"
+          },
+          "253":{
+             "name":"Sidi Makhlouf"
+          },
+          "254":{
+             "name":"Zarzis"
+          }
+       }
+    },
+    "16":{
+       "name":"Monastir",
+       "regions":{
+          "176":{
+             "name":"Bekalta"
+          },
+          "177":{
+             "name":"Bembla"
+          },
+          "178":{
+             "name":"Beni Hassen"
+          },
+          "179":{
+             "name":"Jemmal"
+          },
+          "180":{
+             "name":"Ksar Helal"
+          },
+          "181":{
+             "name":"Ksibet El Mediouni"
+          },
+          "182":{
+             "name":"Moknine"
+          },
+          "183":{
+             "name":"Monastir"
+          },
+          "184":{
+             "name":"Ouerdanine"
+          },
+          "185":{
+             "name":"Sahline"
+          },
+          "186":{
+             "name":"Sayada Lamta Bou Hajar"
+          },
+          "187":{
+             "name":"Teboulba"
+          },
+          "188":{
+             "name":"Zeramdine"
+          }
+       }
+    },
+    "5":{
+       "name":"Nabeul",
+       "regions":{
+          "49":{
+             "name":"Beni Khalled"
+          },
+          "50":{
+             "name":"Beni Khiar"
+          },
+          "51":{
+             "name":"Bou Argoub"
+          },
+          "52":{
+             "name":"Dar Chaabane Elfehri"
+          },
+          "53":{
+             "name":"El Haouaria"
+          },
+          "54":{
+             "name":"El Mida"
+          },
+          "55":{
+             "name":"Grombalia"
+          },
+          "56":{
+             "name":"Hammam El Ghezaz"
+          },
+          "57":{
+             "name":"Hammamet"
+          },
+          "58":{
+             "name":"Kelibia"
+          },
+          "59":{
+             "name":"Korba"
+          },
+          "60":{
+             "name":"Menzel Bouzelfa"
+          },
+          "61":{
+             "name":"Menzel Temime"
+          },
+          "62":{
+             "name":"Nabeul"
+          },
+          "63":{
+             "name":"Soliman"
+          },
+          "64":{
+             "name":"Takelsa"
+          }
+       }
+    },
+    "18":{
+       "name":"Sfax",
+       "regions":{
+          "200":{
+             "name":"Agareb"
+          },
+          "201":{
+             "name":"Bir Ali Ben Khelifa"
+          },
+          "202":{
+             "name":"El Amra"
+          },
+          "203":{
+             "name":"El Hencha"
+          },
+          "204":{
+             "name":"Esskhira"
+          },
+          "205":{
+             "name":"Ghraiba"
+          },
+          "206":{
+             "name":"Jebeniana"
+          },
+          "207":{
+             "name":"Kerkenah"
+          },
+          "208":{
+             "name":"Mahras"
+          },
+          "209":{
+             "name":"Menzel Chaker"
+          },
+          "210":{
+             "name":"Sakiet Eddaier"
+          },
+          "211":{
+             "name":"Sakiet Ezzit"
+          },
+          "212":{
+             "name":"Sfax Est"
+          },
+          "213":{
+             "name":"Sfax Sud"
+          },
+          "214":{
+             "name":"Sfax Ville"
+          }
+       }
+    },
+    "14":{
+       "name":"Sidi Bouzid",
+       "regions":{
+          "150":{
+             "name":"Ben Oun"
+          },
+          "151":{
+             "name":"Bir El Haffey"
+          },
+          "152":{
+             "name":"Cebbala"
+          },
+          "153":{
+             "name":"Jilma"
+          },
+          "154":{
+             "name":"Maknassy"
+          },
+          "155":{
+             "name":"Menzel Bouzaiene"
+          },
+          "156":{
+             "name":"Mezzouna"
+          },
+          "157":{
+             "name":"Ouled Haffouz"
+          },
+          "158":{
+             "name":"Regueb"
+          },
+          "159":{
+             "name":"Sidi Bouzid Est"
+          },
+          "160":{
+             "name":"Sidi Bouzid Ouest"
+          },
+          "161":{
+             "name":"Souk Jedid"
+          }
+       }
+    },
+    "11":{
+       "name":"Siliana",
+       "regions":{
+          "115":{
+             "name":"Bargou"
+          },
+          "116":{
+             "name":"Bou Arada"
+          },
+          "117":{
+             "name":"El Aroussa"
+          },
+          "118":{
+             "name":"Gaafour"
+          },
+          "119":{
+             "name":"Kesra"
+          },
+          "120":{
+             "name":"Le Krib"
+          },
+          "121":{
+             "name":"Makthar"
+          },
+          "122":{
+             "name":"Rohia"
+          },
+          "123":{
+             "name":"Sidi Bou Rouis"
+          },
+          "124":{
+             "name":"Siliana Nord"
+          },
+          "125":{
+             "name":"Siliana Sud"
+          }
+       }
+    },
+    "15":{
+       "name":"Sousse",
+       "regions":{
+          "162":{
+             "name":"Akouda"
+          },
+          "163":{
+             "name":"Bou Ficha"
+          },
+          "164":{
+             "name":"Enfidha"
+          },
+          "165":{
+             "name":"Hammam Sousse"
+          },
+          "166":{
+             "name":"Hergla"
+          },
+          "167":{
+             "name":"Kalaa El Kebira"
+          },
+          "168":{
+             "name":"Kalaa Essghira"
+          },
+          "169":{
+             "name":"Kondar"
+          },
+          "170":{
+             "name":"Msaken"
+          },
+          "171":{
+             "name":"Sidi Bou Ali"
+          },
+          "172":{
+             "name":"Sidi El Heni"
+          },
+          "173":{
+             "name":"Sousse Jaouhara"
+          },
+          "174":{
+             "name":"Sousse Riadh"
+          },
+          "175":{
+             "name":"Sousse Ville"
+          }
+       }
+    },
+    "24":{
+       "name":"Tataouine",
+       "regions":{
+          "255":{
+             "name":"Bir Lahmar"
+          },
+          "256":{
+             "name":"Dehiba"
+          },
+          "257":{
+             "name":"Ghomrassen"
+          },
+          "258":{
+             "name":"Remada"
+          },
+          "259":{
+             "name":"Smar"
+          },
+          "260":{
+             "name":"Tataouine Nord"
+          },
+          "261":{
+             "name":"Tataouine Sud"
+          }
+       }
+    },
+    "20":{
+       "name":"Tozeur",
+       "regions":{
+          "226":{
+             "name":"Degueche"
+          },
+          "227":{
+             "name":"Hezoua"
+          },
+          "228":{
+             "name":"Nefta"
+          },
+          "229":{
+             "name":"Tameghza"
+          },
+          "230":{
+             "name":"Tozeur"
+          }
+       }
+    },
+    "1":{
+       "name":"Tunis",
+       "regions":{
+          "1":{
+             "name":"Bab Bhar"
+          },
+          "280":{
+             "name":"Bab Bnet"
+          },
+          "266":{
+             "name":"Bab Fella"
+          },
+          "281":{
+             "name":"Bab Khadhra"
+          },
+          "282":{
+             "name":"Bab Mnara"
+          },
+          "267":{
+             "name":"Bab Saadoun"
+          },
+          "2":{
+             "name":"Bab Souika"
+          },
+          "283":{
+             "name":"Belvedère"
+          },
+          "3":{
+             "name":"Carthage"
+          },
+          "4":{
+             "name":"Cite El Khadra"
+          },
+          "268":{
+             "name":"Cité El Mahrajen"
+          },
+          "269":{
+             "name":"Cité Hlel"
+          },
+          "270":{
+             "name":"Cité Ibn Khaldoun"
+          },
+          "275":{
+             "name":"Cité Ibn Sina"
+          },
+          "271":{
+             "name":"Cité Intilaka"
+          },
+          "272":{
+             "name":"Cité Rommana"
+          },
+          "273":{
+             "name":"El Agba"
+          },
+          "321":{
+             "name":"El Aouina"
+          },
+          "5":{
+             "name":"El Hrairia"
+          },
+          "6":{
+             "name":"El Kabbaria"
+          },
+          "7":{
+             "name":"El Kram"
+          },
+          "8":{
+             "name":"El Menzah"
+          },
+          "9":{
+             "name":"El Omrane"
+          },
+          "10":{
+             "name":"El Omrane Superieur"
+          },
+          "11":{
+             "name":"El Ouerdia"
+          },
+          "12":{
+             "name":"Essijoumi"
+          },
+          "13":{
+             "name":"Ettahrir"
+          },
+          "14":{
+             "name":"Ezzouhour"
+          },
+          "274":{
+             "name":"Gammart"
+          },
+          "284":{
+             "name":"Hafsia"
+          },
+          "276":{
+             "name":"Jardins de Carthage"
+          },
+          "15":{
+             "name":"Jebel Jelloud"
+          },
+          "16":{
+             "name":"La Goulette"
+          },
+          "17":{
+             "name":"La Marsa"
+          },
+          "18":{
+             "name":"La Medina"
+          },
+          "19":{
+             "name":"Le Bardo"
+          },
+          "324":{
+             "name":"Les berges du lac 1"
+          },
+          "323":{
+             "name":"Les berges du lac 2"
+          },
+          "318":{
+             "name":"Manar 1"
+          },
+          "319":{
+             "name":"Manar 2"
+          },
+          "320":{
+             "name":"Manar 3"
+          },
+          "298":{
+             "name":"menzah 4"
+          },
+          "297":{
+             "name":"Menzah 9"
+          },
+          "278":{
+             "name":"monplaisir"
+          },
+          "325":{
+             "name":"Mourouj 2"
+          },
+          "279":{
+             "name":"Sidi Bou Saïd"
+          },
+          "20":{
+             "name":"Sidi El Bechir"
+          },
+          "21":{
+             "name":"Sidi Hassine"
+          }
+       }
+    },
+    "6":{
+       "name":"Zaghouan",
+       "regions":{
+          "65":{
+             "name":"Bir Mcherga"
+          },
+          "66":{
+             "name":"El Fahs"
+          },
+          "67":{
+             "name":"Ennadhour"
+          },
+          "68":{
+             "name":"Hammam Zriba"
+          },
+          "69":{
+             "name":"Saouef"
+          },
+          "70":{
+             "name":"Zaghouan"
+          }
+       }
+    }
+ }

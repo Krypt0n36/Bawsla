@@ -1,0 +1,12 @@
+
+@media screen and (min-width: 1082px) {
+    #register_form{
+        width: 60%!important;
+    }
+}
+
+@media screen and (max-width: 1082px) {
+    #register_form{
+        width: 100%!important;
+    }
+}

@@ -1,0 +1,200 @@
+
+.pill{
+    background-color:#EBEBEB;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size: 13px;
+    color:rgba(0, 0, 0, 0.838);
+    margin-right: 5px;
+    margin-bottom:5px;
+    width: fit-content;
+}
+
+
+.card{
+    width: 100%;
+    background-color:white;
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding:10px;
+    transition: 0.3s all;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 30px 0px rgba(19, 19, 28, 0.12);
+    transform: scale(1.01);
+}
+
+.imageFrame{
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+.imageFrameEx{
+    background-size: cover;
+    background-position: center;
+    width: 40%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.imageFrame-overlay{
+    background-color:#3838384c;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: relative;
+}
+
+.prop-type{
+    font-size: 15px;
+    color:#EF3D49;
+}
+.prop-date{
+    font-size: 15px;
+    color:#000000ac;
+}
+.card>h3{
+    margin:0px;
+}
+
+.card-price{
+    position: absolute;
+    bottom: 5px;
+    left: 9px;
+    color: white;
+    text-shadow: 0px 0px 5px #00000061;
+    display: inline-flex;
+}
+
+
+
+
+
+.card-owner-avatar{
+    width: 40px;
+    height: 40px;
+    background-image: url('https://scontent.ftun1-2.fna.fbcdn.net/v/t1.0-9/129281275_746202076247092_4238761880510909316_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=lVY_ieTeHEoAX9HObzD&_nc_ht=scontent.ftun1-2.fna&oh=627ccfbddac31eec6703ee3d01fcf7ff&oe=6082184A');
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+}
+.card_location {
+    color:#3E3E3E;
+    
+}
+.card-owner-creds{
+    margin-left:10px;
+}
+.card-owner-creds>.name{
+    color:rgba(0, 0, 0, 0.913);
+}
+.card-owner-creds>.role{
+    color:rgba(0, 0, 0, 0.687);
+    font-size: 14px;
+}
+
+.prop_title{
+    color:black;
+    margin:0px;
+}
+
+.indicator-container{
+    height: 40px;
+    text-align: center;
+    margin-right:10px;
+}
+.indicator-value{
+    color:#3E3E3E;
+}
+.indicator-icon{
+    margin-bottom:2px;
+}
+
+.slider-control-container{
+    display: inline-flex;
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    top: 40%;
+}
+.slider-control {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    background-color: #191919;
+    box-sizing: border-box;
+    border-radius: 50%;
+    padding:8px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.slider-control>img{
+    width: 100%;
+    margin:auto;
+}
+.slider-control:hover{
+    opacity: 1;
+}
+.slider-control.next-button{
+    margin:auto;
+    margin-right: 0px;
+}
+
+
+@media screen and (max-width: 1082px) {
+    .card{
+        padding:5px;
+    }
+    .imageFrame{
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 150px;
+        border-radius: 5px;
+    }
+    .prop-type{
+        font-size: 12px;
+    }
+    .prop-date{
+        font-size: 12px;
+    }
+    .prop_title{
+        font-size: 17px;
+    }
+    .card_location{
+        font-size: 12px;
+    }
+    .card-price{
+        font-size: 13px;
+    }
+    .pill{
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top:2.5px;
+        padding-bottom:2.5px;
+        font-size: 11px;
+    }
+    .card-owner-creds{
+        margin-left:5px;
+    }
+    .card-owner-creds>.name{
+        color:rgba(0, 0, 0, 0.913);
+        font-size: 14px;
+        margin:auto;
+    }
+    .card-owner-creds>.role{
+        color:rgba(0, 0, 0, 0.687);
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: 'Mulish', sans-serif;
+
+
+}
+
+*{
+  font-family: 'Mulish', sans-serif;
+}
+
+
+.react-responsive-modal-modal{
+  border-radius: 7px!important;
+}
+
+h1{
+  font-family: 'Mulish', sans-serif;
+
+}

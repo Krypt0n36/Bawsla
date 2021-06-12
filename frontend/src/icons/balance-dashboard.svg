@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="93" viewBox="0 0 93 93">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" x2="0" y2="0.959" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f95538"/>
+      <stop offset="1" stop-color="#ef3d49"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_20" data-name="Group 20" transform="translate(-716 -3736)">
+    <rect id="Rectangle_305" data-name="Rectangle 305" width="93" height="93" rx="46.5" transform="translate(716 3736)" fill="url(#linear-gradient)"/>
+    <g id="Icon_feather-dollar-sign" data-name="Icon feather-dollar-sign" transform="translate(745.318 3766)">
+      <path id="Path_176" data-name="Path 176" d="M18,1.5v30" transform="translate(-0.818)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_177" data-name="Path 177" d="M24,7.5H13.773A4.642,4.642,0,0,0,9,12a4.642,4.642,0,0,0,4.773,4.5h6.818A4.642,4.642,0,0,1,25.364,21a4.642,4.642,0,0,1-4.773,4.5H9" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

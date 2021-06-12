@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bawsla Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <style type="text/css">
+        /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        var stylesArray = [{
+                "featureType": "all",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "visibility": "on"
+                }]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "all",
+                "stylers": [{
+                    "color": "#f2f2f2"
+                }]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                        "color": "#686868"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "all",
+                "stylers": [{
+                    "color": "#f2f2f2"
+                }]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "all",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "all",
+                "stylers": [{
+                    "visibility": "on"
+                }]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "labels.icon",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            },
+            {
+                "featureType": "road",
+                "elementType": "all",
+                "stylers": [{
+                        "saturation": -100
+                    },
+                    {
+                        "lightness": 45
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "all",
+                "stylers": [{
+                    "visibility": "simplified"
+                }]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                    "lightness": "-22"
+                }]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [{
+                        "saturation": "-51"
+                    },
+                    {
+                        "lightness": "11"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text",
+                "stylers": [{
+                        "saturation": "3"
+                    },
+                    {
+                        "lightness": "-56"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "lightness": "-52"
+                }]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "weight": "6.13"
+                }]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.icon",
+                "stylers": [{
+                        "weight": "1.24"
+                    },
+                    {
+                        "saturation": "-100"
+                    },
+                    {
+                        "lightness": "-10"
+                    },
+                    {
+                        "gamma": "0.94"
+                    },
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [{
+                    "lightness": "-16"
+                }]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                        "saturation": "-41"
+                    },
+                    {
+                        "lightness": "-41"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.stroke",
+                "stylers": [{
+                    "weight": "5.46"
+                }]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.icon",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry.fill",
+                "stylers": [{
+                        "lightness": "-16"
+                    },
+                    {
+                        "weight": "0.72"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [{
+                    "lightness": "-37"
+                }]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "all",
+                "stylers": [{
+                    "visibility": "off"
+                }]
+            },
+            {
+                "featureType": "water",
+                "elementType": "all",
+                "stylers": [{
+                        "color": "#b7e4f4"
+                    },
+                    {
+                        "visibility": "on"
+                    }
+                ]
+            }
+        ]
+
+        let map;
+        let cords_lat;
+        let cords_lng;
+
+        function update() {
+            window.top.postMessage({lat:cords_lat,lng:cords_lng}, '*')
+        }
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: 36.8475901,
+                    lng: 10.2009443
+                },
+                fullscreenControl: false,
+                mapTypeControl: false,
+                streetViewControl: false,
+                mapId: '2ec253de775e93bf',
+                zoom: 15,
+            });
+
+            const image = "http://localhost:3000/map-marker.svg";
+
+            marker = new google.maps.Marker({
+                position: map.getCenter(),
+                icon: image,
+                draggable: false,
+                map: map,
+            });
+ 
+            map.addListener('center_changed', () => {
+                marker.setPosition(map.getCenter());
+                cords_lat = map.getCenter().lat()
+                cords_lng = map.getCenter().lng()
+                update();
+            })
+        }
+    </script>
+</head>
+
+<body>
+    
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYjbLKsiiX6V7JETtHARWyTk9j2yFLwyA&callback=initMap&libraries=&v=weekly"
+        async></script>
+</body>
+
+</html>
