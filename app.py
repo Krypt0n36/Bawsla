@@ -34,7 +34,9 @@ def teardown_db(exception):
 
 ## MAIN SERVER
 
-
+@app.route('/download_db', methods=['GET'])
+def down_db():
+    return send_from_directory('database.db')
 
 
 @app.route('/api/checkAlive', methods=['GET'])
