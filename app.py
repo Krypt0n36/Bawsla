@@ -35,13 +35,8 @@ def teardown_db(exception):
 ## MAIN SERVER
 
 # Serve React App
-<<<<<<< HEAD
 @app.route('/', methods=['GET'])
 def index():
-=======
-@app.route('/')
-def catch_all():
->>>>>>> 8b1e5fda48f381f3e8306e810a845972e6f3521c
     return send_from_directory(app.static_folder, 'index.html')
 
 
