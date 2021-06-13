@@ -44,6 +44,10 @@ def index():
 def login_page():
     return send_from_directory(app.static_folder, 'index.html')
     
+@app.route('/dashboard', methods=['GET'])
+def login_page():
+    return send_from_directory(app.static_folder, 'index.html')
+
 
 @app.route('/api/checkAlive', methods=['GET'])
 def checkAlive():
