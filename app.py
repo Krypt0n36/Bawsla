@@ -34,19 +34,7 @@ def teardown_db(exception):
 
 ## MAIN SERVER
 
-# Serve React App
-@app.route('/', methods=['GET'])
-def index():
-    return send_from_directory(app.static_folder, 'index.html')
 
-
-@app.route('/login', methods=['GET'])
-def login_page():
-    return send_from_directory(app.static_folder, 'index.html')
-    
-@app.route('/dashboard', methods=['GET'])
-def login_page():
-    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/api/checkAlive', methods=['GET'])
@@ -944,6 +932,12 @@ def wish_fetch():
         n_single.update({'images':res2})
         new_data.append(n_single)
     return {'status':'ok', 'data':new_data}        
+
+
+# Serve React App
+@app.route('/<path:path>', methods=['GET'])
+def index(path):
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 if __name__ == '__main__':
