@@ -13,7 +13,7 @@ import os
 from werkzeug.utils import secure_filename
 import json
 import time
-
+import cloudflow
 from datetime import date
 
 
@@ -507,6 +507,8 @@ def fileUpload():
     #return {'status':'ok', 'direct_link':'http://localhost:5000/'+destination}
     return {'status':'ok', 'direct_link':'http://localhost:5000/'+destination, 'fid':fid}
 
+
+# UPLOAD FILE FROM BROWSER -> STORE IN TEMP -> UPLOAD TO CDN -> DELETE TEMP FILE
 @app.route('/api/changeAvatar', methods=['POST'])
 def changeAvatar():
     try:
@@ -514,19 +516,24 @@ def changeAvatar():
         session_token = uio.getField('session_token', allowed_chars=string.digits+string.ascii_letters)
     except Exception as e:
         return {'status': 'error', 'reason': 1, 'field': str(e)}
+    
+    # check session token
+    if not procedures.checkSessionToken(identifier, session_token):
+        return {'status': 'error', 'reason': 2}
+ 
+    # INTERCEPT FILE
     file = request.files['file']
     filename = str(identifier) + '.' + file.filename.split(".")[-1]
-    if file.filename.split(".")[-1].upper() == 'JPG':
-        target = os.path.join(UPLOAD_FOLDER, 'avatars')
-    else:
-        target = os.path.join(UPLOAD_FOLDER, 'temp')
-    
+    # SAVE IN TEMP
+    target = os.path.join(UPLOAD_FOLDER, 'temp')
     destination = "/".join([target, filename])
     file.save(destination)
     # convert file to jpg if the extention is not jpg
     if file.filename.split(".")[-1].upper() != 'JPG':
         procedures.convertImage(filename, str(identifier)) # filename without extention
-    return {'status':'ok', 'direct_link':'http://localhost:5000/'+destination}
+    # upload to cdn
+    cloudflow.upload_blob('avatars', filename, destination)
+    return {'status':'ok', 'direct_link':'https://bawsla.blob.core.windows.net/avatars/%s'%filename}
 
 
 @app.route('/api/checkPassword', methods=['POST'])
