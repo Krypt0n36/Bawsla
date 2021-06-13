@@ -103,6 +103,7 @@ export default class App extends React.Component {
     this.setState({ modalOpen: false });
   }
   componentWillMount() {
+    alert('Compo will mount')
     fetch(`${globals.backend_url}/api/listing/fetch`)
       .then(resp => resp.json())
       .then((result) => {
