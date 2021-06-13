@@ -11,7 +11,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  HashRouter
 } from "react-router-dom";
 import Dashboard from './Dashboard/Dashboard';
 import HostProp from './HostProp/HostProp';
@@ -25,8 +26,8 @@ import { LocationPicker } from './Map/Map';
 import Inbox from './Inbox/Inbox'
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
+  <HashRouter>
+<Router history={HashRouter}>
         <Switch>
         <Route path="/dashboard/inbox/:id" component={Inbox}></Route>
         <Route path="/dashboard/inbox/" component={Inbox}></Route>
@@ -80,7 +81,8 @@ ReactDOM.render(
           </Route>
         </Switch>
       </Router>
-  </React.StrictMode>,
+  </HashRouter>,
+    
   document.getElementById('root')
 );
 
