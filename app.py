@@ -38,7 +38,7 @@ def teardown_db(exception):
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
-    return 'Hello it works '
+    return send_from_directory(app.static_folder, 'index.html')
 
 
 @app.route('/api/checkAlive', methods=['GET'])
