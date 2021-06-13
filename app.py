@@ -38,6 +38,10 @@ def teardown_db(exception):
 def down_db():
     return send_from_directory('./database.db')
 
+# Custom static data
+@app.route('/static/<path:filename>')
+def custom_static(filename):
+    return send_from_directory('/static', filename)
 
 @app.route('/api/checkAlive', methods=['GET'])
 def checkAlive():
