@@ -933,11 +933,11 @@ def wish_fetch():
         new_data.append(n_single)
     return {'status':'ok', 'data':new_data}        
 
-
-# Serve React App
+@app.route('/', defaults={'path':''})
 @app.route('/<path:path>', methods=['GET'])
 def index(path):
     return send_from_directory(app.static_folder, 'index.html')
+
 
 
 if __name__ == '__main__':
