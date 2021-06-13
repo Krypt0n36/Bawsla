@@ -933,9 +933,8 @@ def wish_fetch():
         new_data.append(n_single)
     return {'status':'ok', 'data':new_data}        
 
-@app.route('/', defaults={'path':''})
-@app.route('/<path:path>', methods=['GET'])
-def index(path):
+@app.errorhandler(404)
+def index(e):
     return send_from_directory(app.static_folder, 'index.html')
 
 
