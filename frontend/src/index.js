@@ -26,8 +26,8 @@ import { LocationPicker } from './Map/Map';
 import Inbox from './Inbox/Inbox'
 
 ReactDOM.render(
-  <HashRouter>
-<Router history={HashRouter}>
+  <React.StrictMode>
+    <Router>
         <Switch>
         <Route path="/dashboard/inbox/:id" component={Inbox}></Route>
         <Route path="/dashboard/inbox/" component={Inbox}></Route>
@@ -81,8 +81,7 @@ ReactDOM.render(
           </Route>
         </Switch>
       </Router>
-  </HashRouter>,
-    
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
