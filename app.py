@@ -35,9 +35,8 @@ def teardown_db(exception):
 ## MAIN SERVER
 
 # Serve React App
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
+@app.route('/')
+def catch_all():
     return send_from_directory(app.static_folder, 'index.html')
 
 
