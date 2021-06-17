@@ -262,7 +262,7 @@ export default class HostProp extends React.Component{
             data.append('identifier', cookies.load('user_id'));
             data.append('session_token', cookies.load('session_token'));
 
-            fetch(`${globals.backend_url}/uploadFile`, {
+            fetch(`${globals.backend_url}/api/uploadFile`, {
                 method:'POST',
                 body:data,
             }).then((response) => {

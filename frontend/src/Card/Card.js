@@ -67,6 +67,7 @@ class Card extends React.Component {
     }
   }
   componentDidMount() {
+    console.log(this.props.data)
     // FA
     const data = new FormData();
     data.append('action', 'view')
@@ -97,6 +98,7 @@ class Card extends React.Component {
 
   render() {
     let prop_type_value = 'Apartment';
+    let images = this.props.data.images;
     if (this.props.data.prop_type == '0') {
       prop_type_value = 'Duplex'
     } else if (this.props.data.prop_type == '1') {
@@ -106,11 +108,13 @@ class Card extends React.Component {
     }else if (this.props.data.prop_type == '3') {
       prop_type_value = 'House'
     }
-    
+    if(!images[0]){
+      images = [{filename:'undefined.jpg'}] // fallback image prototype
+    }
     if (this.props.extended == true) {
       return (
         <div className="card" style={{ width: '100%', display: 'inline-flex' }}>
-          <div className="imageFrameEx" style={{ backgroundImage: `url('${globals.frontend_url}/static/uploads/${this.props.data.images[this.state.currentImage].filename}')` }}>
+          <div className="imageFrameEx" style={{ backgroundImage: `url('${globals.cdn_url}/listings-images/${images[this.state.currentImage].filename || 'undefined.jpg'}')` }}>
             <div className="imageFrame-overlay" style={{ boxSizing: 'border-box', padding: '10px' }}>
               <div className="slider-control-container">
                 <div className="slider-control prev-button" onClick={this.handlePrevImage}>
@@ -155,7 +159,7 @@ class Card extends React.Component {
     } else {
       return (
         <div className="card">
-          <div className="imageFrame" style={{ backgroundImage: `url('${globals.backend_url}/static/uploads/${this.props.data.images[this.state.currentImage].filename}')` }}>
+          <div className="imageFrame" style={{ backgroundImage: `url('${globals.cdn_url}/listings-images/${images[this.state.currentImage].filename}')` }}>
 
             <div className="imageFrame-overlay" style={{ boxSizing: 'border-box', padding: '10px' }}>
               <div style={{
@@ -170,6 +174,8 @@ class Card extends React.Component {
                 marginRight: '0px'
               }}>Available 23 July 2021</div>
 
+{(images.length > 1)&&
+
               <div className="slider-control-container">
                 <div className="slider-control prev-button" onClick={this.handlePrevImage}>
                   <img src={PrevIcon} />
@@ -178,6 +184,7 @@ class Card extends React.Component {
                   <img src={NextIcon} />
                 </div>
               </div>
+    }
               <div className="card-price"><h2 style={{ margin: '0px' }}>{this.props.data.prop_price} TND</h2><span style={{ lineHeight: '2' }}>/Month</span> </div>
             </div>
           </div>
@@ -222,11 +229,13 @@ class Card extends React.Component {
 
 
           }
+          
 
 
         </div>
       );
     }
+    
   }
 }
 

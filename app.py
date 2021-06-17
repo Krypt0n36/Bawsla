@@ -444,8 +444,8 @@ def fetchListing():
     new_data = []
     for single in data:
         # get stat
-        v_query = 'SELECT count(DISTINCT B.idfa) AS "views" FROM behaviours B, listings L WHERE B.action = "view" AND B.asset_id=L.id AND L.id=%d'%int(single['id']) # VIEWS QUERY
-        c_query = 'SELECT count(DISTINCT B.idfa) AS "clicks" FROM behaviours B, listings L WHERE B.action = "click" AND B.asset_id=L.id AND L.id=%d'%int(single['id']) # VIEWS QUERY
+        v_query = 'SELECT count(DISTINCT B.idfa) AS views FROM behaviours B, listings L WHERE B.action = "view" AND B.asset_id=L.id AND L.id=%d'%int(single['id']) # VIEWS QUERY
+        c_query = 'SELECT count(DISTINCT B.idfa) AS clicks FROM behaviours B, listings L WHERE B.action = "click" AND B.asset_id=L.id AND L.id=%d'%int(single['id']) # VIEWS QUERY
         v_value = db_toolkit.query_db(v_query)[0]['views']
         c_value = db_toolkit.query_db(c_query)[0]['clicks']
         # get owner profile info
@@ -486,7 +486,7 @@ def fetchSingle():
 
     return {'status':'ok', 'data':new_data[0]}
 
-@app.route('/uploadFile', methods=['POST'])
+@app.route('/api/uploadFile', methods=['POST'])
 def fileUpload():
     try:
         identifier = uio.getField(
@@ -494,18 +494,17 @@ def fileUpload():
         session_token = uio.getField('session_token', allowed_chars=string.digits+string.ascii_letters)
     except Exception as e:
         return {'status': 'error', 'reason': 1, 'field': str(e)}
-    
     target = os.path.join(UPLOAD_FOLDER, 'uploads')
-   
-    query = 'INSERT INTO images (owner_id) VALUES ("%s")'%(int(identifier))
-    fid = db_toolkit.post_db(query)
-
+    query = 'INSERT INTO images (owner_id) VALUES ("%s") RETURNING id'%(int(identifier))
+    fid = db_toolkit.post_db(query, ret=True)
     file = request.files['file']
     filename = str(fid) + '.' + file.filename.split(".")[-1]
     destination = "/".join([target, filename])
     file.save(destination)
-    #return {'status':'ok', 'direct_link':'http://localhost:5000/'+destination}
-    return {'status':'ok', 'direct_link':'http://localhost:5000/'+destination, 'fid':fid}
+    if not cloudflow.upload_blob('listings-images',filename, destination):
+        return {'status': 'error', 'reason': 2}
+    else:
+        return {'status':'ok', 'direct_link':'https://bawsla.blob.core.windows.net/listings-images/%s'%filename, 'fid':str(fid)}
 
 
 # UPLOAD FILE FROM BROWSER -> STORE IN TEMP -> UPLOAD TO CDN -> DELETE TEMP FILE
@@ -621,10 +620,10 @@ def widgetFetch():
             'session_token', allowed_chars=string.digits+string.ascii_letters)
     except Exception as e:
         return {'status':'error', 'reason':1, 'field':str(e)}
-    v_query = 'SELECT count(DISTINCT B.idfa) AS "views" FROM behaviours B, listings L WHERE B.action = "view" AND B.asset_id=L.id AND L.prop_owner=%d'%int(identifier) # VIEWS QUERY
-    c_query = 'SELECT count(DISTINCT B.idfa) AS "clicks" FROM behaviours B, listings L WHERE B.action = "click" AND B.asset_id=L.id AND L.prop_owner=%d'%int(identifier) # VIEWS QUERY
+    v_query = 'SELECT count(DISTINCT B.idfa) AS views FROM behaviours B, listings L WHERE B.action = "view" AND B.asset_id=L.id AND L.prop_owner=%d'%int(identifier) # VIEWS QUERY
+    c_query = 'SELECT count(DISTINCT B.idfa) AS clicks FROM behaviours B, listings L WHERE B.action = "click" AND B.asset_id=L.id AND L.prop_owner=%d'%int(identifier) # VIEWS QUERY
     b_query = 'SELECT balance FROM users WHERE id=%d'%(identifier)
-    l_query = 'SELECT count(id) AS "listings" FROM listings WHERE prop_owner=%d'%(identifier)
+    l_query = 'SELECT count(id) AS listings FROM listings WHERE prop_owner=%d'%(identifier)
     
     v_value = db_toolkit.query_db(v_query)[0]['views']
     c_value = db_toolkit.query_db(c_query)[0]['clicks']
@@ -684,7 +683,7 @@ def recentConvos():
             session_token = request.args.get('session_token')
         except:
             return 'ERROR #001'
-    query = 'SELECT DISTINCT U.id, U.account_name FROM users U, messages M WHERE (M.sender='+str(uid)+' OR M.dest='+str(uid)+')  AND (U.id = M.sender OR U.id = M.dest) AND (U.id != ' + str(uid) + ') ORDER BY M.id DESC'
+    query = 'SELECT DISTINCT U.id, U.account_name, M.id FROM users U, messages M WHERE (M.sender='+str(uid)+' OR M.dest='+str(uid)+')  AND (U.id = M.sender OR U.id = M.dest) AND (U.id != ' + str(uid) + ') ORDER BY M.id DESC'
     r = db_toolkit.query_db(query)
     print(r)
     r2 = []
@@ -748,8 +747,8 @@ def markAsSeen():
 def join():
     ip = request.remote_addr
     # Generate idfa
-    query = 'INSERT INTO visitors (ip) VALUES ("%s")'%ip
-    idfa = db_toolkit.post_db(query)
+    query = 'INSERT INTO visitors (ip) VALUES ("%s") RETURNING idfa'%ip
+    idfa = db_toolkit.post_db(query, ret=True)
     return {'status':'ok', 'idfa':idfa}
 
 @app.route('/api/fa/capture_behaviour', methods=['POST'])
@@ -949,4 +948,4 @@ def index(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0', port='80')

@@ -89,7 +89,7 @@ class Gallery extends React.Component {
         return (
             <div className="gallery-container">
                 <div className="gallery-main-frame-container">
-                    <div className="gallery-main-frame" style={{ backgroundImage: `url('${globals.backend_url}/static/uploads/${this.props.pics[this.state.currentImage].filename}')` }}>
+                    <div className="gallery-main-frame" style={{ backgroundImage: `url('${globals.cdn_url}/listings-images/${this.props.pics[this.state.currentImage].filename}')` }}>
                         <div className="slider-control-container">
                             <div className="slider-control prev-button" onClick={this.handlePrevImage}>
                                 <img src={PrevIcon} />
@@ -101,9 +101,9 @@ class Gallery extends React.Component {
                     </div>
                 </div>
                 <div className="gallery-other-frame-container">
-                    <div className="gallery-other-frame first" style={{ backgroundImage: `url('${globals.backend_url}/static/uploads/${this.props.pics[this.state.currentImage % this.props.pics.length].filename}')` }}></div>
-                    <div className="gallery-other-frame" style={{ backgroundImage: `url('${globals.backend_url}/static/uploads/${this.props.pics[(this.state.currentImage + 1) % this.props.pics.length].filename}')` }}></div>
-                    <div className="gallery-other-frame last" style={{ backgroundImage: `url('${globals.backend_url}/static/uploads/${this.props.pics[(this.state.currentImage + 2) % this.props.pics.length].filename}')` }}>
+                    <div className="gallery-other-frame first" style={{ backgroundImage: `url('${globals.cdn_url}/listings-images/${this.props.pics[this.state.currentImage % this.props.pics.length].filename}')` }}></div>
+                    <div className="gallery-other-frame" style={{ backgroundImage: `url('${globals.cdn_url}/listings-images/${this.props.pics[(this.state.currentImage + 1) % this.props.pics.length].filename}')` }}></div>
+                    <div className="gallery-other-frame last" style={{ backgroundImage: `url('${globals.cdn_url}/listings-images/${this.props.pics[(this.state.currentImage + 2) % this.props.pics.length].filename}')` }}>
                         <div className="gallery-other-frame-overlay">
                             <span><h2 style={{ margin: '0px' }}>{this.props.pics.length - 2}</h2> <br></br>Other pictures  </span>
                         </div>

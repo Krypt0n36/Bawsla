@@ -179,7 +179,6 @@ class Navbar extends React.Component {
           if (res['status'] == 'ok') {
             this.setState({ user_id: cookies.load('user_id'), account_name: res['data']['account_name'], account_type: res['data']['account_type'] })
           } else {
-            alert('session destroyed')
             cookies.remove('session_token');
             cookies.remove('user_id');
             this.setState({ user_id: null, session_token: null, account_name: null, account_type: null })

@@ -90,7 +90,7 @@ class Avatar extends React.Component {
       path = this.props.absolute_filename 
     }
     if (this.props.filename) {
-      path = `${globals.backend_url}/static/avatars/` + this.props.filename
+      path = `${globals.cdn_url}/avatars/` + this.props.filename
     }
     if(this.props.forceReload){
       path += '?t=' + currentDate.getTime();
@@ -100,7 +100,7 @@ class Avatar extends React.Component {
     if (this.props.avatarSquare) {
       return (
         <div style={{ height: this.props.dim, width: this.props.dim, borderRadius: '7px' }}>
-          <div style={{ height: '100%', width: '100%', backgroundImage: `url('${globals.backend_url}/static/avatars/default.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative', borderRadius: '7px', boxShadow:'0px 0px 5px #0000001a' }}>
+          <div style={{ height: '100%', width: '100%', backgroundImage: `url('${globals.cdn_url}/avatars/default.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative', borderRadius: '7px', boxShadow:'0px 0px 5px #0000001a' }}>
             <div style={{ height: '100%', width: '100%', backgroundImage: `url(${path})`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative', borderRadius: '7px', boxShadow:'0px 0px 5px #0000001a' }}>
           </div>
           </div>
@@ -114,7 +114,7 @@ class Avatar extends React.Component {
         <div style={this.props.style}>
 
         <div style={{ height: this.props.dim, width: this.props.dim, borderRadius: this.props.radius ? this.props.radius : '50%', border: '2px solid #EBEBEB', boxSizing: 'border-box', padding: '2px' }}>
-          <div style={{ height: '100%', width: '100%', borderRadius: this.props.radius ? this.props.radius : '50%', backgroundImage: `url(${path}),url('${globals.backend_url}/static/avatars/default.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative' }}>
+          <div style={{ height: '100%', width: '100%', borderRadius: this.props.radius ? this.props.radius : '50%', backgroundImage: `url(${path}),url('${globals.cdn_url}/avatars/default.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative' }}>
             {this.props.showEdit && <Button onClick={() => this.openModal(<ChangeAvatar closeModal={this.closeModal} />)} variant="transparent curvy" innerPadding="6px" buttonCenterIcon={<Camera style={{ height: '100%', width: '100%' }} />} style={{ width: '30px', height: '30px', border: '2px solid #ffffff', backgroundColor: '#f3f3f3', position: 'absolute', bottom: '0px', right: '0px' }} />}
           </div>
           <Modal open={this.state.modalOpen} onClose={this.closeModal} center style={{ padding: '0px' }}>

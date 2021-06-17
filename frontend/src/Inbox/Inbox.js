@@ -550,7 +550,7 @@ export default class Inbox extends React.Component {
                 }
             })
             .catch((r) => {
-                alert(r)
+                window.location = `/dashboard/inbox`
             })
     }
     navigate2contact(uid) {
@@ -567,11 +567,11 @@ export default class Inbox extends React.Component {
                     }
                     this.setState({ contacts: resp.data });
                 } else {
-                    alert('ERROR CHECK CONSOLE')
+                    //alert('ERROR CHECK CONSOLE')
                 }
             })
             .catch((e) => {
-                alert(e)
+                //alert(e)
             })
     }
     sendMessage() {

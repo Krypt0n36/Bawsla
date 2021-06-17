@@ -96,7 +96,7 @@ export default class Explore extends React.Component {
               </div>
             </div>
 
-            <div style={{ width: '100%', display: 'inline-flex' }}>
+            <div style={{ width: '100%', display: 'inline-flex', flexWrap:'wrap' }}>
               {this.state.cards.map(item => <div style={{ width: '25%', padding: '5px', boxSizing: 'border-box' }}><Card data={item} /></div>)}
             </div>
           </div>
