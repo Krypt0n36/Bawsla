@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="113" height="113" viewBox="0 0 113 113">
-  <g id="Group_85" data-name="Group 85" transform="translate(-550 -141)">
-    <circle id="Ellipse_31" data-name="Ellipse 31" cx="56.5" cy="56.5" r="56.5" transform="translate(550 141)" fill="rgba(253,90,95,0.37)"/>
-    <g id="Icon_feather-lock" data-name="Icon feather-lock" transform="translate(588.112 177.069)">
-      <path id="Path_95" data-name="Path 95" d="M8.586,16.5h28.6a4.086,4.086,0,0,1,4.086,4.086v14.3a4.086,4.086,0,0,1-4.086,4.086H8.586A4.086,4.086,0,0,1,4.5,34.888v-14.3A4.086,4.086,0,0,1,8.586,16.5Z" transform="translate(-4.5 1.888)" fill="none" stroke="#fd5a5f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-      <path id="Path_96" data-name="Path 96" d="M10.5,21.388V13.215a10.215,10.215,0,1,1,20.431,0v8.172" transform="translate(-2.328 -3)" fill="none" stroke="#fd5a5f" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
-    </g>
-  </g>
-</svg>
