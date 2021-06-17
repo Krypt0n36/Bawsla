@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="93" viewBox="0 0 93 93">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" x2="0" y2="0.959" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f95538"/>
+      <stop offset="1" stop-color="#ef3d49"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_19" data-name="Group 19" transform="translate(-610 -3736)">
+    <rect id="Rectangle_304" data-name="Rectangle 304" width="93" height="93" rx="46.5" transform="translate(610 3736)" fill="url(#linear-gradient)"/>
+    <g id="Icon_feather-mouse-pointer" data-name="Icon feather-mouse-pointer" transform="translate(637 3763)">
+      <path id="Path_174" data-name="Path 174" d="M4.5,4.5,17,34.5l4.437-13.064L34.5,17Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      <path id="Path_175" data-name="Path 175" d="M19.5,19.5,30.107,30.107" transform="translate(2.678 2.678)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

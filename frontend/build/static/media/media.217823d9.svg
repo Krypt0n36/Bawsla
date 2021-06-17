@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <g id="Group_263" data-name="Group 263" transform="translate(-121 -773)">
+    <rect id="Rectangle_232" data-name="Rectangle 232" width="40" height="40" transform="translate(121 773)" fill="none"/>
+    <g id="Icon_feather-image" data-name="Icon feather-image" transform="translate(130.291 782.291)">
+      <path id="Path_236" data-name="Path 236" d="M5.88,4.5h9.659a1.38,1.38,0,0,1,1.38,1.38v9.659a1.38,1.38,0,0,1-1.38,1.38H5.88a1.38,1.38,0,0,1-1.38-1.38V5.88A1.38,1.38,0,0,1,5.88,4.5Z" fill="none" stroke="rgba(0,0,0,0.75)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
+      <path id="Path_237" data-name="Path 237" d="M12.57,11.535A1.035,1.035,0,1,1,11.535,10.5,1.035,1.035,0,0,1,12.57,11.535Z" transform="translate(-3.24 -3.24)" fill="none" stroke="rgba(0,0,0,0.75)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
+      <path id="Path_238" data-name="Path 238" d="M18.539,18.45,15.089,15,7.5,22.589" transform="translate(-1.62 -5.67)" fill="none" stroke="rgba(0,0,0,0.75)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"/>
+    </g>
+  </g>
+</svg>
