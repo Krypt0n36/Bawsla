@@ -32,12 +32,7 @@ def teardown_db(exception):
     if db is not None:
         db.close()
 
-## MAIN SERVER
-
-@app.route('/download_db', methods=['GET'])
-def down_db():
-    return send_from_directory('./database.db')
-
+## MAIN SERVE
 
 @app.route('/api/checkAlive', methods=['GET'])
 def checkAlive():
@@ -940,6 +935,7 @@ def wish_fetch():
         n_single.update({'images':res2})
         new_data.append(n_single)
     return {'status':'ok', 'data':new_data}        
+
 
 @app.errorhandler(404)
 def index(e):
