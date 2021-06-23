@@ -18,6 +18,7 @@ import {
 import Footer from './Footer/Footer';
 import GoogleMapReact from 'google-map-react';
 import { Filter, Grid, Map, MapPin } from 'react-feather';
+import Loading from './Loading/Loading';
 import globals from './var';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
@@ -97,7 +98,8 @@ export default class Explore extends React.Component {
             </div>
 
             <div style={{ width: '100%', display: 'inline-flex', flexWrap:'wrap' }}>
-              {this.state.cards.map(item => <div style={{ width: '25%', padding: '5px', boxSizing: 'border-box' }}><Card data={item} /></div>)}
+              {(this.state.cards.length>0)?this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>):<Loading />}
+            
             </div>
           </div>
 

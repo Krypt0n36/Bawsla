@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f0017242.chunk.css",
-    "main.js": "/static/js/main.d958ec46.chunk.js",
-    "main.js.map": "/static/js/main.d958ec46.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.43632ed8.js",
-    "runtime-main.js.map": "/static/js/runtime-main.43632ed8.js.map",
+    "main.css": "/static/css/main.790e5a10.chunk.css",
+    "main.js": "/static/js/main.7a768379.chunk.js",
+    "main.js.map": "/static/js/main.7a768379.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d82b01a4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d82b01a4.js.map",
     "static/css/2.1fe20c78.chunk.css": "/static/css/2.1fe20c78.chunk.css",
-    "static/js/2.9ea9889e.chunk.js": "/static/js/2.9ea9889e.chunk.js",
-    "static/js/2.9ea9889e.chunk.js.map": "/static/js/2.9ea9889e.chunk.js.map",
-    "static/js/3.63b0bc1c.chunk.js": "/static/js/3.63b0bc1c.chunk.js",
-    "static/js/3.63b0bc1c.chunk.js.map": "/static/js/3.63b0bc1c.chunk.js.map",
+    "static/js/2.77b4d54d.chunk.js": "/static/js/2.77b4d54d.chunk.js",
+    "static/js/2.77b4d54d.chunk.js.map": "/static/js/2.77b4d54d.chunk.js.map",
+    "static/js/3.d0911ce8.chunk.js": "/static/js/3.d0911ce8.chunk.js",
+    "static/js/3.d0911ce8.chunk.js.map": "/static/js/3.d0911ce8.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.1fe20c78.chunk.css.map": "/static/css/2.1fe20c78.chunk.css.map",
-    "static/css/main.f0017242.chunk.css.map": "/static/css/main.f0017242.chunk.css.map",
-    "static/js/2.9ea9889e.chunk.js.LICENSE.txt": "/static/js/2.9ea9889e.chunk.js.LICENSE.txt",
+    "static/css/main.790e5a10.chunk.css.map": "/static/css/main.790e5a10.chunk.css.map",
+    "static/js/2.77b4d54d.chunk.js.LICENSE.txt": "/static/js/2.77b4d54d.chunk.js.LICENSE.txt",
     "static/media/agenda-dashboard-active.d1975875.svg": "/static/media/agenda-dashboard-active.d1975875.svg",
     "static/media/agenda-dashboard.00ec9758.svg": "/static/media/agenda-dashboard.00ec9758.svg",
     "static/media/arrow-left-gray.21f2a0ac.svg": "/static/media/arrow-left-gray.21f2a0ac.svg",
@@ -83,6 +83,7 @@
     "static/media/share.bea0ab8c.svg": "/static/media/share.bea0ab8c.svg",
     "static/media/sharp-logo.6d5e14f2.svg": "/static/media/sharp-logo.6d5e14f2.svg",
     "static/media/signature.c0dfa1ae.svg": "/static/media/signature.c0dfa1ae.svg",
+    "static/media/spinner.95fb43c4.svg": "/static/media/spinner.95fb43c4.svg",
     "static/media/star-dashboard-active.0275ebef.svg": "/static/media/star-dashboard-active.0275ebef.svg",
     "static/media/star-dashboard.1eb4e234.svg": "/static/media/star-dashboard.1eb4e234.svg",
     "static/media/success.4bfee89e.svg": "/static/media/success.4bfee89e.svg",
@@ -99,10 +100,10 @@
     "static/media/yellow-star.7b3fb7fd.svg": "/static/media/yellow-star.7b3fb7fd.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.43632ed8.js",
+    "static/js/runtime-main.d82b01a4.js",
     "static/css/2.1fe20c78.chunk.css",
-    "static/js/2.9ea9889e.chunk.js",
-    "static/css/main.f0017242.chunk.css",
-    "static/js/main.d958ec46.chunk.js"
+    "static/js/2.77b4d54d.chunk.js",
+    "static/css/main.790e5a10.chunk.css",
+    "static/js/main.7a768379.chunk.js"
   ]
 }
