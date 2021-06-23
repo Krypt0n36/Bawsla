@@ -47,7 +47,7 @@ class Map extends React.Component{
     render(){
         return (
             <div style={this.props.style}>
-                <iframe onLoad={this.iframeLoad} src={`${globals.frontend_url}:3000/location-marker.html`} style={{border:'none', borderRadius:'7px', width:'100%', height:'100%'}}>
+                <iframe onLoad={this.iframeLoad} src={`${globals.frontend_url}/location-marker.html`} style={{border:'none', borderRadius:'7px', width:'100%', height:'100%'}}>
                 </iframe>
             </div>
         );

@@ -37,6 +37,24 @@
     color:#000000;
     font-weight: bold;
 }
+.navbar-nav-link-mob{
+    padding-right: 20px;
+    padding-left: 10px;
+    font-size: 15px;
+    font-family: 'mulish';
+    color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    transition: 0.3s all;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #00000014;
+}
+.navbar-nav-link-mob.active{
+    color:#000000;
+    font-weight: bold;
+    border-left: 5px solid #EA384D;
+}
+  
 .navbar-right{
     margin:auto;
     margin-right: 0px;

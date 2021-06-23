@@ -408,7 +408,7 @@ export default class Single extends React.Component {
                                 </div>
                             </div>
                         </Well>
-                        <Well style={{ marginTop: '20px' }}>
+                        <Well style={{ marginTop: '20px', marginBottom:'20px' }}>
                             <h2>Write a review</h2>
                             <span>Rating :</span><br></br>
                             <StarBarDynamic dim="20px" value={this.state.rating} onChange={this.handleChange} />
@@ -455,7 +455,6 @@ export default class Single extends React.Component {
                     </div>
                 </div>
 
-                <Footer />
             </div>
 
         );

@@ -41,6 +41,8 @@
 @media screen and (max-width: 1082px) {
     .landing-picture-overlay>.wraper>h1{
         font-size: 35px;
+        margin-top:50px;
+
     }
     .landing-picture-overlay>.wraper>span.subtitle{
         font-size: 15px;
@@ -50,6 +52,7 @@
         padding-bottom: 5%;
     }
     .landing-picture-container{
-        min-height: 460px;
+        min-height: 500px;
     }
+    
 }

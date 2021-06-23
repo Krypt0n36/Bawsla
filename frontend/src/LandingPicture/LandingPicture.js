@@ -11,7 +11,7 @@ export default class LandingPicture extends React.Component{
             <div className="landing-picture-container">
                 <div className="landing-picture-overlay"> 
                 <div className="wraper">
-                    <h1>Bringing housing closer!</h1>
+                    <h1 className="landing-title">Bringing housing closer!</h1>
                     <span className="subtitle">House rental & Real estate made simple.</span>
                     <SearchPanel style={{margin: 'auto', marginTop:'50px', background:'none'}}/> 
                 </div>

@@ -77,10 +77,10 @@ export default class Explore extends React.Component {
     return (
       <div style={{ backgroundColor: 'rgb(249, 250, 252)', position: 'absolute', width: '100%', minHeight: '100%',  }}>
         <Navbar showSearch={true} page="Explorer" style={{ border: '1px solid #EBEBEB!important' }} />
-        <div style={{boxSizing:'border-box', padding:'25px', paddingBottom:'0px'}}>
+        <div className="main" >
           <SearchPanel style={{width:'100%'}} style={{backgroundColor:'transparent'}} />
         </div>
-        <div style={{ display: 'inline-flex', width: '100%',boxSizing:'border-box', padding:'25px', paddingTop:'0px' }}>
+        <div className="main">
           <div style={{ display: 'inline-flex', flexWrap: 'wrap', marginTop: '20px', marginBottom: '30px', width: '100%', boxSizing: 'border-box', padding: '10px' }}>
             <div style={{width:'100%', display:'inline-flex', marginBottom:'20px'}}>
               <div style={{ padding: '5px' }}>

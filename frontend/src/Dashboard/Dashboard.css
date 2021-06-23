@@ -1,0 +1,82 @@
+/* DESKTOP */
+@media screen and (min-width: 1082px) {
+    .widget-container {
+        width: 25%;
+        padding: 10px;
+        padding-top: 0px;
+        box-sizing: border-box;
+    }
+    .main{
+        padding: 20px;
+        padding-top: 0px;
+        margin-top: 30px; 
+    }
+    .widgets-container{
+        display: inline-flex;
+        width: 100%;
+        flex-wrap: wrap;
+
+    }
+    .widget{
+        display: inline-flex;
+        color: white;
+        background: linear-gradient(to right, black, black);
+        padding: 15px;
+        border-radius: 7px;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    .widget-icon {
+        height: 100px;
+        width: 100px;
+        margin: auto;
+        margin-right: 0;
+        border-radius: 50%; 
+    }
+    .widget-icon-container{
+        margin: auto;
+        margin-right: 0px;
+    }
+}
+/* Mobile */
+
+@media screen and (max-width: 1082px) {
+    .widget-container {
+        width: 50%;
+        padding: 5px;
+        padding-top: 0px;
+        box-sizing: border-box;
+    }
+    .main{
+        padding: 5px;
+        padding-top: 0px;
+        margin-top: 30px; 
+    }
+    .widgets-container{
+        display: inline-flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .widget{
+        display: inline-flex;
+        color: white;
+        background: linear-gradient(to right, black, black);
+        padding: 10px;
+        border-radius: 7px;
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    .widget-icon-container{
+        margin: auto;
+        margin-right: 0px;
+    }
+    .widget-icon {
+        height: 60px;
+        width: 60px;
+        margin-right: 0;
+        border-radius: 50%; 
+    }
+    .widget-title{
+        font-size: 11px;
+    }
+}

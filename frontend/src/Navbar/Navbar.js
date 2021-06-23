@@ -97,7 +97,7 @@ class AvatarDropDown extends React.Component {
     return (
       <div className="dropdown-container" ref={this.container} style={this.props.style}>
 
-        <div style={{ display: 'inline-flex' }}>
+        <div style={{ display: 'inline-flex' }} onClick={this.handleClick}>
 
           <Avatar dim='50px' filename={cookies.load('user_id') + '.jpg'} />
           <div className="mobile-hidden">
@@ -116,7 +116,6 @@ class AvatarDropDown extends React.Component {
           <div className="dropdown-item" onClick={this.onClickDashboard}><div style={{ width: '15px', height: '15px', marginRight: '10px' }}><Grid style={{ width: '100%', height: '100%' }} /></div><span>Dashboard</span></div>
           <div className="dropdown-item" onClick={this.onClickAccountSettings} ><div style={{ width: '15px', height: '15px', marginRight: '10px' }}><Settings style={{ width: '100%', height: '100%' }} /></div><span>Account Settings</span></div>
           <div className="dropdown-item" onClick={() => this.openModal(<Wishlist />)} ><div style={{ width: '15px', height: '15px', marginRight: '10px' }}><Heart style={{ width: '100%', height: '100%' }} /></div><span>Wishlist</span></div>
-
           <div className="dropdown-item" onClick={this.handleLogOut} ><div style={{ width: '15px', height: '15px', marginRight: '10px' }}><LogOut style={{ width: '100%', height: '100%' }} /></div><span>Log out</span></div>
 
         </div>
@@ -142,7 +141,7 @@ class Egg extends React.Component {
   }
   render() {
     return (
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative' }} onClick={this.handleToggle}>
         <Button onClick={this.handleToggle} innerPadding="15px" variant={"curvy " + (this.state.active == true && " active")} style={{ width: '50px', height: '50px', boxSizing: 'border-box', position: 'relative', border: 'none', marginRight: '10px' }} buttonCenterIcon={this.props.icon}>
           <div className="button-red-dot"></div>
         </Button>
@@ -277,7 +276,7 @@ class Navbar extends React.Component {
               {this.state.modalContent}
             </div>
           </Modal>
-          <Sandwich toggled={this.state.sandwichToggled} handleToggleSandwich={this.handleToggleSandwich} />
+          <Sandwich page={this.props.page} toggled={this.state.sandwichToggled} handleToggleSandwich={this.handleToggleSandwich} />
 
         </div>
       );
@@ -294,26 +293,14 @@ class Sandwich extends React.Component {
       <div style={{ zIndex: '4', position: 'fixed', display: this.props.toggled ? 'block' : 'none', width: '100%', height: '100%', left: '0px', backgroundColor: '#00000059', top: '80px' }}  >
         <div style={{ zIndex: '4', position: 'fixed', width: this.props.toggled ? '75%' : '0px', height: '100%', left: '0px', backgroundColor: 'white', top: '80px', borderTop: '1px solid whitesmoke' }}>
 
-          <div style={{ width: '100%', boxSizing: 'border-box', padding: '20px' }}>
-            <div style={{ width: '100%', display: 'inline-flex', lineHeight: '1.4', paddingTop: '15px', paddingBottom: '15px', borderBottom: '1px solid #ececec' }}>
-              <div style={{ width: '20px', height: '20px', borderRadius: '7px', boxSizing: 'border-box', strokeWidth: '1.4px', marginRight: '20px' }}>
-                <Grid style={{ height: '100%', width: '100%', color: '#4A4A4A', strokeWidth: '1.4' }} />
-              </div>
-              <span>Dashboard</span>
-            </div>
-            <div style={{ width: '100%', display: 'inline-flex', lineHeight: '1.4', paddingTop: '15px', paddingBottom: '15px', borderBottom: '1px solid #ececec' }}>
-              <div style={{ width: '20px', height: '20px',  borderRadius: '7px', boxSizing: 'border-box', strokeWidth: '1.4px', marginRight: '20px' }}>
-                <DollarSign style={{ width: '100%', height: '100%', color: '#4A4A4A', strokeWidth: '1.4' }} />
-              </div>
-              <span>Wallet</span>
-            </div>
-            <div style={{ width: '100%', display: 'inline-flex', lineHeight: '1.4', paddingTop: '15px', paddingBottom: '15px', borderBottom: '1px solid #ececec' }}>
-              <div style={{ width: '20px', height: '20px', borderRadius: '7px', boxSizing: 'border-box', strokeWidth: '1.4px', marginRight: '20px' }}>
-                <Inbox style={{ width: '100%', height: '100%', color: '#4A4A4A', strokeWidth: '1.4' }} />
-              </div>
-              <span>Inbox</span>
-            </div>
-
+          <div style={{ width: '100%', boxSizing: 'border-box', paddingTop: '20px' }}>
+            
+                <div className={this.props.page == 'Home' ? "navbar-nav-link-mob active" : "navbar-nav-link-mob"}><Link to="/" style={{ color: 'unset' }}>Home</Link></div>
+                <div className={this.props.page == 'Explorer' ? "navbar-nav-link-mob active" : "navbar-nav-link-mob"}><Link to="/explorer/*/*/*" style={{ color: 'unset' }}>Explore</Link></div>
+                <div className={this.props.page == 'Solutions' ? "navbar-nav-link-mob active" : "navbar-nav-link-mob"}><Link to="/solutions/" style={{ color: 'unset' }}>Agencies solutions</Link></div>
+                <div className={this.props.page == 'About' ? "navbar-nav-link-mob active" : "navbar-nav-link-mob"}><Link to="/about-us/" style={{ color: 'unset' }}>About us</Link></div>
+                <div className={this.props.page == 'Contact' ? "navbar-nav-link-mob active" : "navbar-nav-link-mob"}><Link to="/contact-us/" style={{ color: 'unset' }}>Contact us</Link></div>
+            
           </div>
 
 

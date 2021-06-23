@@ -14,6 +14,8 @@ import { Modal } from 'react-responsive-modal';
 import cookies from 'react-cookies';
 import { Plus } from 'react-feather';
 import globals from './../var'
+import './Dashboard.css';
+import Loading from '../Loading/Loading';
 
 class Widget extends React.Component {
     constructor(props) {
@@ -21,13 +23,13 @@ class Widget extends React.Component {
     }
     render() {
         return (
-            <div style={{ display: 'inline-flex', color: 'white', background: 'linear-gradient(to right, black, black)', padding: '15px', borderRadius: '7px', width: '100%', boxSizing: 'border-box' }}>
+            <div className="widget">
                 <div>
-                    <span>{this.props.title}</span>
-                    <h2>{this.props.data}</h2>
+                    <span className="widget-title">{this.props.title}</span>
+                    <h2 className="widget-value">{this.props.data}</h2>
                 </div>
-                <div style={{ height: '100px', width: '100px', margin: 'auto', marginRight: '0', borderRadius: '50%' }}>
-                    <img src={this.props.icon} />
+                <div className="widget-icon-container">
+                    <img className="widget-icon" src={this.props.icon} />
                 </div>
             </div>
         );
@@ -73,7 +75,7 @@ export default class Dashboard extends React.Component {
                 <div style={{ padding: '5px', paddingTop: '0px', marginTop: '100px' }}>
 
                     <div style={{ display: 'inline-flex', width: '100%', flexWrap: 'wrap' }}>
-                        <div style={{ width: '50%', padding: '10px', paddingTop: '0px', boxSizing: 'border-box' }}>
+                        <div className="widget-container">
                             <Widget title="Total listings" data={this.state.widgetData.listings} icon={houseDashboardIcon} />
                         </div>
                         <div style={{ width: '50%', padding: '10px', paddingTop: '0px', boxSizing: 'border-box' }}>
@@ -108,19 +110,19 @@ export default class Dashboard extends React.Component {
                         </div>
                     </Modal>
                     <Navbar type="dashboard" page="dashboard" openModal={this.openModal} />
-                    <div style={{ padding: '20px', paddingTop: '0px', marginTop: '30px' }}>
+                    <div className="main">
 
-                        <div style={{ display: 'inline-flex', width: '100%' }}>
-                            <div style={{ width: '25%', padding: '10px', paddingTop: '0px' }}>
+                        <div className="widgets-container">
+                            <div className="widget-container">
                                 <Widget title="Total listings" data={this.state.widgetData.listings} icon={houseDashboardIcon} />
                             </div>
-                            <div style={{ width: '25%', padding: '10px', paddingTop: '0px' }}>
+                            <div className="widget-container">
                                 <Widget title="Total views today" data={this.state.widgetData.views} icon={viewsDashboardIcon} />
                             </div>
-                            <div style={{ width: '25%', padding: '10px', paddingTop: '0px' }}>
+                            <div className="widget-container">
                                 <Widget title="Total clicks today" data={this.state.widgetData.clicks} icon={clickDashboardIcon} />
                             </div>
-                            <div style={{ width: '25%', padding: '10px', paddingTop: '0px' }}>
+                            <div className="widget-container">
                                 <Widget title="Current balance" data={this.state.widgetData.balance} icon={balanceDashboardIcon} />
                             </div>
 
@@ -133,7 +135,8 @@ export default class Dashboard extends React.Component {
                                 <Button variant="primary" value="Host new property" buttonLeftIcon={<Plus style={{ width: '100%', height: '100%' }} />} onClick={() => this.openModal(<HostProp closeModal={this.closeModal} />)} style={{ margin: 'auto', marginRight: '0px' }} />
                             </div>
                             <div style={{ display: 'inline-flex', width: '100%', minHeight:'412px', flexWrap:'wrap' }}>
-                                {this.state.cards.map(item => <div style={{ width: '25%', padding: '5px', boxSizing: 'border-box' }}><Card data={item} /></div>)}
+                                {(this.state.cards.length>0)?this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>):<Loading />}
+
                                 {(this.state.cards.length==0)&&<h1 style={{color:'#e6e6e6', margin:'auto'}}>You have currently no posted properties.</h1>}
 
                             </div>
