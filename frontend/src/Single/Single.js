@@ -455,6 +455,7 @@ export default class Single extends React.Component {
                     </div>
                 </div>
 
+                <Footer />
             </div>
 
         );

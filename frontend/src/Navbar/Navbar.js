@@ -19,7 +19,6 @@ import AgendaActiveIcon from './agenda-dashboard-active.svg';
 
 import DashboardIcon from './dashboard-dashboard.svg';
 import DashboardActiveIcon from './dashboard-dashboard-active.svg';
-
 import ChatIcon from './../icons/chat-navbar.svg';
 import BellIcon from './../icons/bell-navbar.svg';
 import LogoutIcon from './logout.svg';
@@ -141,12 +140,15 @@ class Egg extends React.Component {
   }
   render() {
     return (
-      <div style={{ position: 'relative' }} onClick={this.handleToggle}>
+      <div style={{ position: 'relative' }}>
         <Button onClick={this.handleToggle} innerPadding="15px" variant={"curvy " + (this.state.active == true && " active")} style={{ width: '50px', height: '50px', boxSizing: 'border-box', position: 'relative', border: 'none', marginRight: '10px' }} buttonCenterIcon={this.props.icon}>
           <div className="button-red-dot"></div>
         </Button>
         <div hidden={!this.state.active} style={{ backgroundColor: 'white', width: '300px', marginTop: '5px', height: '400px', position: 'absolute', left: 'calc(-100% - 50px)', boxShadow: '0px 0px 5px #0000002b', zIndex: '1', borderRadius: '7px' }}>
+          <div style={{position:'relative', height:'100%'}}>
           {this.props.children}
+
+          </div>
         </div>
       </div>
     )
@@ -211,7 +213,10 @@ class Navbar extends React.Component {
 
 
             <Egg icon={<Bell style={{ color: '#484848', width: '100%', height: '100%' }} />}><Notifications /></Egg>
-            <Egg icon={<MessageCircle style={{ color: '#484848', width: '100%', height: '100%' }} />}><InboxP showContactsOnly={true} /></Egg>
+            <Egg icon={<MessageCircle style={{ color: '#484848', width: '100%', height: '100%' }} />}>
+              <InboxP  type='contacts' />
+              
+            </Egg>
 
             <AvatarDropDown account_name={this.state.account_name} />
           </div>
@@ -254,7 +259,7 @@ class Navbar extends React.Component {
               <div className="mobile-hidden" >
                 <div style={{ display: 'inline-flex' }}>
                   <Egg icon={<Bell style={{ color: '#484848', width: '100%', height: '100%' }} />}><Notifications /></Egg>
-                  <Egg icon={<MessageCircle style={{ color: '#484848', width: '100%', height: '100%' }} />}><InboxP showContactsOnly={true} /></Egg>
+                  <Egg icon={<MessageCircle style={{ color: '#484848', width: '100%', height: '100%' }} />}><InboxP type='contacts' /></Egg>
                 </div>
               </div>
 

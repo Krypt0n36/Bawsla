@@ -23,9 +23,4 @@ def post_db(query, ret=False):
     else:
         return None
 
-query = '''
-SELECT COUNT(id) FROM users WHERE password_value="belani.hassen@gmail.com"
-'''
-print(query_db(query))
-print('DONE')
-db.close()
+

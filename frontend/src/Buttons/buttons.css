@@ -23,6 +23,15 @@
     background-color: #EBEBEB;
 
 }
+
+
+.ghost-primary{
+    background: #fc454b00;
+    border:none;
+    color:black;
+}
+
+
 .square{
     padding:10px;
 }
@@ -46,6 +55,7 @@
 .dark {
     color:white;
     background-color: black;
+    border:none;
     transition: 0.3s all;
 }
 .dark:hover{

@@ -116,6 +116,7 @@ class Avatar extends React.Component {
         <div style={{ height: this.props.dim, width: this.props.dim, borderRadius: this.props.radius ? this.props.radius : '50%', border: '2px solid #EBEBEB', boxSizing: 'border-box', padding: '2px' }}>
           <div style={{ height: '100%', width: '100%', borderRadius: this.props.radius ? this.props.radius : '50%', backgroundImage: `url(${path}),url('${globals.cdn_url}/avatars/default.jpg')`, backgroundPosition: 'center', backgroundSize: 'cover', position: 'relative' }}>
             {this.props.showEdit && <Button onClick={() => this.openModal(<ChangeAvatar closeModal={this.closeModal} />)} variant="transparent curvy" innerPadding="6px" buttonCenterIcon={<Camera style={{ height: '100%', width: '100%' }} />} style={{ width: '30px', height: '30px', border: '2px solid #ffffff', backgroundColor: '#f3f3f3', position: 'absolute', bottom: '0px', right: '0px' }} />}
+            {this.props.showStatus&&(this.props.active?<div style={{ width: '15px', height: '15px',  backgroundColor: '#64E37D', borderRadius:'50%',position: 'absolute', bottom: '-3px', right: '-3px' }} ></div>:<div style={{ width: '15px', height: '15px',  backgroundColor: '#FFAF17', position: 'absolute', borderRadius:'50%',bottom: '-3px', right: '-3px' }} ></div>)}
           </div>
           <Modal open={this.state.modalOpen} onClose={this.closeModal} center style={{ padding: '0px' }}>
             {this.state.modalContent}

@@ -1,6 +1,5 @@
 from flask import flash, Flask, g, redirect, url_for, request,send_from_directory
 import sqlite3
-
 from flask.globals import session
 import db_toolkit
 import uio
@@ -19,7 +18,6 @@ from datetime import date
 
 #app = Flask(__name__, static_url_path='/static')
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
-
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}, r'/uploadFile':{"origins": "*"}})
 
 UPLOAD_FOLDER = 'static'
@@ -165,14 +163,11 @@ def changeAccountInfo():
         first = False
     
     query += ' WHERE id=%d AND session_token="%s"'%(identifier, session_token)
-    print("======================")
-    print(query)
-    print("======================")
+    
 
     try:
         db_toolkit.post_db(query)
     except Exception as e:
-        print(e)
         return {'status': 'error', 'reason': 'database'}
 
     return {'status':'ok'}
@@ -354,9 +349,7 @@ def addListing():
         prop_title, int(prop_price), prop_desc,prop_type, prop_status, int(identifier), int(prop_piece), location_city, location_region,d, location_cord_lat, location_cord_lng)
     
     lid = db_toolkit.post_db(sql)
-    print('========')
-    print(sql)
-    print('========')
+  
 
     images = data
 
@@ -431,9 +424,7 @@ def fetchListing():
     elif(int(sort_by) == -1):
         query += ' ORDER BY prop_price ASC '
     
-    print("=========================")
-    print(query)
-    print("=========================")
+   
 
     data = db_toolkit.query_db(query)
     new_data = []
@@ -680,20 +671,21 @@ def recentConvos():
             return 'ERROR #001'
     query = 'SELECT DISTINCT U.id, U.account_name, M.id FROM users U, messages M WHERE (M.sender='+str(uid)+' OR M.dest='+str(uid)+')  AND (U.id = M.sender OR U.id = M.dest) AND (U.id != ' + str(uid) + ') ORDER BY M.id DESC'
     r = db_toolkit.query_db(query)
-    print(r)
     r2 = []
+    ## if user has no contacts
+   
     for d in r:
         query = 'SELECT body, sender FROM messages WHERE (sender=%d AND dest=%d) OR (sender=%d AND dest=%d) ORDER BY id DESC LIMIT 1'%(int(d['id']), uid, uid, int(d['id']))
         data = db_toolkit.query_db(query)
-        d.update({'lastMsg':data[0]['body']})
-        d.update({'lastMsgSender':data[0]['sender']})
-        r2.append(d)
-    return {'status':'ok', 'data':r}
+        if(len(data) > 0):
+            d.update({'lastMsg':data[0]['body']})
+            d.update({'lastMsgSender':data[0]['sender']})
+            r2.append(d)
+    return {'status':'ok', 'data':r2}
 
 @app.route('/api/chat/contacts', methods=['GET', 'POST'])
 def contacts():
     query = 'SELECT id, name FROM users'
-    print(query)
     r = db_toolkit.query_db(query)
     return {'status':'ok', 'data':r}
 
@@ -704,10 +696,17 @@ def getAccountDetails():
         uid = uio.getField('id', allowed_chars=string.digits)
     except Exception as e:
         return {'status': 'error', 'reason': 1, 'field': str(e)}
-    query = 'SELECT account_name, email FROM users WHERE id=%d '%int(uid)
+    query = 'SELECT account_name, socket_id FROM users WHERE id=%d '%int(uid)
     r = db_toolkit.query_db(query)
-    print(r)
-    return {'status':'ok', 'data':r[0]}
+    online = 0
+    if len(r) == 0:
+        return {'status':'error', 'reason':2} # account id not found
+
+    if(r[0]['socket_id'] != 'undefined'):
+        online = 1
+    else:
+        online = 0
+    return {'status':'ok', 'data':{'account_name':r[0]['account_name'], 'online':online}}
     #return 'ok'
 
 
@@ -819,8 +818,7 @@ def makeTransaction():
         return {'status':'error', 'reason':4}
     # record transaction
     query = 'INSERT INTO transactions (sender, dest, amount, description, timestamp) VALUES (%d, %d, %d,"%s", %d)'%(int(identifier), int(dest), int(amount), description, time.time())
-    print('==================')
-    print(query)
+ 
     db_toolkit.post_db(query)
     # edit balance
     query = 'UPDATE users SET balance=balance-%d WHERE id=%d'%(int(amount), int(identifier))
@@ -943,5 +941,3 @@ def index(e):
 
 
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port='80')

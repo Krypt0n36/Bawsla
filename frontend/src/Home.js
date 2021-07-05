@@ -155,8 +155,8 @@ export default class App extends React.Component {
 
           <h1 style={{ margin: '0px', marginBottom: '5px', fontWeight: '800', fontSize: '25px', color: 'black' }}>Explore listings</h1>
           <span style={{ color: 'rgba(0, 0, 0, 0.776)' }}>Select your city and start exploring.</span>
-          <div className="" style={{ display: 'inline-flex', flexWrap: 'wrap', width: '100%', marginTop: '30px' }}>
-            {(this.state.cards.length>0)?this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>):<Loading />}
+          <div style={{ display: 'inline-flex', flexWrap: 'wrap', width: '100%', marginTop: '30px',minHeight:'412px' }}>
+            {(this.state.cards.length>0)?this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>):<Loading  />}
           </div>
 
 

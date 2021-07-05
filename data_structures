@@ -1,0 +1,26 @@
+
+
+
+
+Message :
+-----------
+
+{
+    id // int, message id
+    sender // int, message sender
+    dest // int, message dest
+    body // text, message body
+    timestamp // int, time of sending the message
+    seen // int, binary
+}
+
+
+Contact :
+-----------
+
+{
+    id // int, contact user id
+    account_name // text, account name
+    last_message // message
+}
+

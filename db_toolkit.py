@@ -38,10 +38,7 @@ def query_db(query, args=(), one=False):
 '''
 def query_db(query, args=(), one=False):
     query = query.replace('"', "'")
-    db = get_db()
-    print("=========================")
-    print(query)
-    print("=========================") 
+    db = get_db() 
     cur = db.cursor(cursor_factory=psycopg2.extras.DictCursor)
     cur.execute(query)
     ans =cur.fetchall()
@@ -53,9 +50,6 @@ def query_db(query, args=(), one=False):
 def post_db(query, ret=False):
     query = query.replace('"', "'")
     db = get_db()
-    print("=========================")
-    print(query)
-    print("=========================") 
     cur = db.cursor()
     cur.execute(query)
     db.commit() 

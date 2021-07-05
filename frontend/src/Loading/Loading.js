@@ -10,11 +10,8 @@ export default class Loading extends React.Component{
     } 
     render(){
         return (
-            <div className="loader-container">
-                <div style={{margin:'auto', width:'fit-content'}}>
+            <div className="loader-container" style={{height:this.props.height}}>
                     <img src={Spinner} className="loader-spinner" />
-
-                </div>
             </div>
         );
     }

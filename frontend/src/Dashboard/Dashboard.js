@@ -39,7 +39,7 @@ class Widget extends React.Component {
 export default class Dashboard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { modalContent: <HostProp />, modalOpen: false, cards: [], widgetData: { balance: NaN, clicks: NaN, listings: NaN, views: NaN } };
+        this.state = { modalContent: <HostProp />, fetchIsLoading:true, modalOpen: false, cards: [], widgetData: { balance: NaN, clicks: NaN, listings: NaN, views: NaN } };
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
     }
@@ -50,7 +50,7 @@ export default class Dashboard extends React.Component {
         fetch(`${globals.backend_url}/api/listing/fetch?owner_id=${cookies.load('user_id')}`)
             .then(resp => resp.json())
             .then((result) => {
-                this.setState({ cards: result['data'] }, () => {
+                this.setState({ cards: result['data'], fetchIsLoading:false }, () => {
                     console.log(this.state.cards)
                 });
             })
@@ -135,9 +135,9 @@ export default class Dashboard extends React.Component {
                                 <Button variant="primary" value="Host new property" buttonLeftIcon={<Plus style={{ width: '100%', height: '100%' }} />} onClick={() => this.openModal(<HostProp closeModal={this.closeModal} />)} style={{ margin: 'auto', marginRight: '0px' }} />
                             </div>
                             <div style={{ display: 'inline-flex', width: '100%', minHeight:'412px', flexWrap:'wrap' }}>
-                                {(this.state.cards.length>0)?this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>):<Loading />}
+                                {(this.state.fetchIsLoading)?<Loading />:this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>)}
 
-                                {(this.state.cards.length==0)&&<h1 style={{color:'#e6e6e6', margin:'auto'}}>You have currently no posted properties.</h1>}
+                                {(this.state.cards.length==0 && !this.state.fetchIsLoading)&&<h1 style={{color:'#e6e6e6', margin:'auto'}}>You have currently no posted properties.</h1>}
 
                             </div>
                         </div>

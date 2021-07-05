@@ -62,7 +62,7 @@ export default class SearchPanel extends React.Component{
               <LocationSelector value="Region" style={{width:'100%'}} data={this.state.regionList} onSelect={(key)=>{this.handleSelectRegion(key)}}/>
             </div>
             <div className="searchPanel-col">
-              <DropDown style={{width:'100%'}} value="Select Type" data={["All","Appartment","Duplex","Ville","Studio"]} name="type_value" onChange={this.handleChange} />
+              <DropDown style={{width:'100%'}} value="Select Type" data={["All","Appartment","Duplex","Villa","Shared room", "Individual room" ]} name="type_value" onChange={this.handleChange} />
             </div>
             <div className="searchPanel-col">
                 <Button variant="primary" style={{width:'100%'}} value="Explore" onClick={this.handleSubmit} />  
