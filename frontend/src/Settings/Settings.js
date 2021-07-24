@@ -112,8 +112,8 @@ export default class Settings extends React.Component {
                 <div style={{ display: 'inline-flex', width: '100%', boxSizing: 'border-box', padding: '20px' }}>
                     <div style={{ width: '30%', boxSizing: 'border-box', padding: '15px' }}>
                         <Well style={{ textAlign: 'center' }}>
-                            <div style={{ margin: 'auto', width: 'fit-content' }} >
-                                <Avatar dim={100} filename={cookies.load('user_id') + '.jpg'} showEdit={true} />
+                            <div style={{width:'100%'}} >
+                                <Avatar style={{margin:'auto', width:'max-content'}} dim={100} filename={cookies.load('user_id') + '.jpg'} showEdit={true} />
                             </div>
                             <h3 style={{ margin: '0px' }}>{this.state.account_info.account_name}</h3>
                             <span>{this.state.account_info.account_type}</span>

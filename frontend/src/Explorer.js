@@ -8,7 +8,7 @@ import './global.css';
 //import Well from './Well/Well';
 import gridIcon from './icons/grid.svg';
 import listingIcon from './icons/listing.svg';
-import SearchPanel from './SearchPanel/SearchPanel';
+import { SearchPanelSelect } from './SearchPanel/SearchPanel';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,7 +17,7 @@ import {
 } from "react-router-dom";
 import Footer from './Footer/Footer';
 import GoogleMapReact from 'google-map-react';
-import { Filter, Grid, Map, MapPin } from 'react-feather';
+import { ArrowDownCircle, Filter, Grid, List, Map, MapPin } from 'react-feather';
 import Loading from './Loading/Loading';
 import globals from './var';
 
@@ -75,35 +75,34 @@ export default class Explore extends React.Component {
   }
   render() {
     return (
-      <div style={{ backgroundColor: 'rgb(249, 250, 252)', position: 'absolute', width: '100%', minHeight: '100%',  }}>
+      <div style={{ backgroundColor: 'rgb(249, 250, 252)', position: 'absolute', width: '100%', minHeight: '100%', }}>
         <Navbar showSearch={true} page="Explorer" style={{ border: '1px solid #EBEBEB!important' }} />
-        <div className="main" >
-          <SearchPanel style={{width:'100%'}} style={{backgroundColor:'transparent'}} />
+        <div style={{boxSizing:'border-box', padding:'25px', paddingBottom:'0px'}}>
+          <div style={{ paddingLeft:'15px', marginTop:'30px'}}>
+            <h2 style={{ color: 'black', margin: '0px' }}>{this.state.cards.length} search results in <span style={{ color: '#EF3D49' }}>{this.state.searchCity}, {this.state.searchRegion}</span></h2>
+          </div>
+          <SearchPanelSelect style={{ backgroundColor: 'transparent', width: '100%' }}  />
         </div>
-        <div className="main">
-          <div style={{ display: 'inline-flex', flexWrap: 'wrap', marginTop: '20px', marginBottom: '30px', width: '100%', boxSizing: 'border-box', padding: '10px' }}>
-            <div style={{width:'100%', display:'inline-flex', marginBottom:'20px'}}>
-              <div style={{ padding: '5px' }}>
-                <span>{this.state.cards.length} listings</span>
-                <h2 style={{ color: 'black', margin: '0px' }}>Search results in <span style={{ color: '#EF3D49' }}>{this.state.searchCity}, {this.state.searchRegion}</span></h2>
-
-              </div>
-              <div style={{display: 'inline-flex', marginBottom: '20px', margin:'auto', marginRight:'0px', marginBottom:'0px' }}>
-                <div style={{ margin: 'auto', marginRight: '0px', display: 'inline-flex' }} >
-                  <Button variant="transparent curvy" style={{ marginRight: '5px' }} innerPadding="17px" buttonCenterIcon={<Filter style={{ width: '100%', height: '100%' }} />} />
-                  <Button variant="transparent curvy" style={{ marginRight: '5px' }} innerPadding="17px" buttonCenterIcon={<Map style={{ width: '100%', height: '100%' }} />} />
-
-                </div>
-              </div>
+        <div style={{boxSizing:'border-box', padding:'25px', paddingTop:'0px'}}>
+          <div style={{width:'100%', boxSizing:'border-box', padding:'10px', display:'inline-flex'}}>
+            <Button variant="transparent" value="Grid" buttonLeftIcon={<Grid style={{height:'100%', width:'100%'}} />} />
+            <Button variant="transparent" value="List" buttonLeftIcon={<List style={{height:'100%', width:'100%'}} />} />
+            <Button variant="transparent" value="Map" buttonLeftIcon={<Map style={{height:'100%', width:'100%'}} />} />
+            <div style={{margin:'auto', marginRight:'0px'}}>
+            <Button  variant="transparent" value="Filter" buttonLeftIcon={<Filter style={{height:'100%', width:'100%'}} />} />
+            <Button  variant="transparent" value="Sort" buttonLeftIcon={<ArrowDownCircle style={{height:'100%', width:'100%'}} />} />
+          
             </div>
-
-            <div style={{ width: '100%', display: 'inline-flex', flexWrap:'wrap' }}>
-              {(this.state.cards.length>0)?this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px',padding:'5px', boxSizing: 'border-box' }}><Card data={item} /></div>):<Loading />}
             
+          </div>
+          <div style={{ display: 'inline-flex', flexWrap: 'wrap',  marginBottom: '10px', width: '100%', boxSizing: 'border-box', padding: '10px' }}>
+            <div style={{ width: '100%', display: 'inline-flex', flexWrap: 'wrap' }}>
+              {(this.state.cards.length > 0) ? this.state.cards.map((item, index) => <div className="w-50-mob" style={{ width: '25%', padding: (index % 2 == 0) ? '0px 2.5px 0px 0px' : '0px 0px 0px 2.5px', padding: '5px', boxSizing: 'border-box' }}><Card data={item} /></div>) : <Loading height="450px" />}
+
             </div>
           </div>
 
-          
+
         </div>
 
         <Footer />

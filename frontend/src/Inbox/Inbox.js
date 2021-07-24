@@ -3,7 +3,7 @@ import cookies from 'react-cookies'
 import Loading from './../Loading/Loading';
 
 import { Textbox } from './../Textbox/Textbox'
-import { Phone, Search, Send, ArrowDown, ArrowLeft, FolderPlus } from 'react-feather';
+import { Phone, Search, Send, ArrowDown, ArrowLeft, FolderPlus, Eye } from 'react-feather';
 import { Well } from './../Well/Well'
 import globals from './../var'
 import socketIOClient from "socket.io-client";
@@ -36,7 +36,7 @@ class Contact extends React.Component {
                         <h4 style={{ margin: '0px', color: 'black', fontWeight: 'bold' }}>{this.props.info.account_name}</h4>
                     </div>
                     
-                    <span style={{ fontSize: '14px', color: '#A3A3A3', fontWeight:(this.props.info.last_message.seen==0)&&'bold'}}>{(this.props.info.last_message.sender == cookies.load('user_id')) && 'You : '}{this.props.info.last_message.body}</span>
+                    <span style={{ fontSize: '14px', color: '#A3A3A3', fontWeight:(this.props.info.last_message.seen==0 && this.props.info.last_message.sender != cookies.load('user_id'))&&'bold'}}>{(this.props.info.last_message.sender == cookies.load('user_id')) && 'You : '}{this.props.info.last_message.body}</span>
                 </div>
             </div>
         );
@@ -224,6 +224,11 @@ class Convo extends React.Component {
                 <div className="convo-main" ref={this.props.convoContainerRef}>
                     {this.props.loading && <Loading height="100%" />}
                     {this.state.convo.map(item => <Bubble data={item} />)}
+                    <div style={{width:'100%', textAlign:'right'}}>
+                    {(this.state.convo.length > 0)&&(this.state.convo[this.state.convo.length - 1]['seen'] == 1 && this.state.convo[this.state.convo.length - 1]['sender'] == cookies.load('user_id'))&&<Eye style={{height:'30px', height: '20px',color: '#0000003d'}} />}
+
+                    </div>
+                
                 </div>
                 {(this.state.scrollDownButtonActive == true) && <Spring
                     from={{ opacity: 0 }}
@@ -261,6 +266,17 @@ class InboxC extends React.Component {
             var new_convo = this.state.currentConvo;
             new_convo[new_convo.length - 1 ]['seen'] = 1;
             this.setState({currentConvo:new_convo})
+        }
+        console.log('Marking as seen')
+        // update contact to seen
+        var new_contacts = this.state.contacts;
+        for(var i=0; i<new_contacts.length; i++){
+            if (new_contacts[i]["id"] == this.state.selectedContact.id){
+                var aux = new_contacts[i]
+                aux['last_message']['seen'] = 1;
+                new_contacts[i] = aux;
+                break;
+            }
         }
     }
     notify() {

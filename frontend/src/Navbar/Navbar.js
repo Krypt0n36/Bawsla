@@ -268,7 +268,7 @@ class Navbar extends React.Component {
             :
             <div className="navbar-right">
               <div className="mobile-hidden">
-                <a onClick={() => this.openModal(<LoginForm />)}><img src={userIcon} style={{ marginRight: '5px' }} /> Log in / Sign up</a>
+                <a style={{cursor:'pointer'}} onClick={() => this.openModal(<LoginForm />)}><img src={userIcon} style={{ marginRight: '5px' }} /> Log in / Sign up</a>
                 <Button onClick={() => this.openModal(<RegisterMain />)} style={{ marginLeft: '20px' }} variant="curvy" value="Become a host" />
               </div>
               <div className="mobile-login-button">

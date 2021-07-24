@@ -1,5 +1,9 @@
 import React from 'react';
 import './buttons.css';
+import UseAnimations from 'react-useanimations';
+import loading from 'react-useanimations/lib/loading';
+
+const LoadingIcon = () => <div style={{margin:'auto', width:'max-content'}}><UseAnimations style={{margin:'auto'}}  strokeColor={'white'} animation={loading} /></div>;
 
 class ButtonOld extends React.Component {
 	constructor(props) {
@@ -19,7 +23,7 @@ class TabButton extends React.Component{
 	}
 	render(){
 		return (
-			<div className={this.props.active?'tab-button active ':'tab-button'}>
+			<div className={"tab-button " + this.props.variant} onClick={this.props.onClick} >
 				{this.props.value}
 			</div>
 		);
@@ -32,11 +36,11 @@ class Button extends React.Component {
 		super(props);
 	}
 	render() {
-		if (this.props.buttonCenterIcon) {
+		if (this.props.buttonCenterIcon || this.props.isLoading) {
 			return (
 				<div className={"btn " + this.props.variant} style={this.props.style} onClick={this.props.onClick}>
-					<div style={{ height: '100%', width: '50px', boxSizing: 'border-box', padding: this.props.innerPadding?this.props.innerPadding:'13px' }}>
-						{this.props.buttonCenterIcon}
+					<div style={{ height: '100%', width: '100%', boxSizing: 'border-box', padding: this.props.innerPadding?this.props.innerPadding:'13px' }}>
+						{this.props.isLoading?<LoadingIcon />:this.props.buttonCenterIcon}
 					</div>
 				</div>
 			);
@@ -96,6 +100,7 @@ class Button extends React.Component {
 						textAlign:'center',
 					}}>
 						{this.props.value}
+						
 					</div>
 			</div>
 			);

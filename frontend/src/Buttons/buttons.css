@@ -3,10 +3,10 @@
 .btn {
     height: 50px;
     border-radius: 7px;
-    background: white;
-    border: 1px solid #EBEBEB;
+    background-color: #f4f4f4;
+    border: none;
     font-size: 13px;
-    color: #232E43;
+    color: #121212;
     font-family: 'mulish';
     font-weight: bold;
     /* padding: 10px 30px 10px 30px; */
@@ -18,10 +18,11 @@
 }
 .btn:hover{
     background-color: #EBEBEB;
+    text-decoration: underline;
+
 }
 .btn.active{
     background-color: #EBEBEB;
-
 }
 
 
@@ -43,13 +44,13 @@
 
 .primary{
     background: #FC454B;
-    background: linear-gradient(to right, #EF3D49, #F95538);
-    border: 1px solid #EF3D49;
     color:white;
     transition: 0.3s all;
 }
 .primary:hover{
-    transform: scale(1.01);
+    background: #FC454B;
+
+    text-decoration: underline;
 }
 
 .dark {
@@ -59,8 +60,8 @@
     transition: 0.3s all;
 }
 .dark:hover{
-    transform: scale(1.01);
     background-color:black;
+    
 }
 
 
@@ -128,10 +129,25 @@
     padding: 11px 30px 5px 30px;
     margin-right: 10px;
 }
+
 .tab-button:hover{
     background-color: #EBEBEB;
 }
 .tab-button.active{
     background-color: black;
     color:white;
+}
+
+.tab-button.dark{
+    color:rgba(255, 255, 255, 0.845);
+    background-color:rgba(0, 0, 0, 0.502);
+    border:1px solid black;
+}
+.tab-button.dark:hover{
+    background-color:rgb(0, 0, 0);
+
+}
+.tab-button.dark.active{
+    background-color:rgb(0, 0, 0);
+
 }

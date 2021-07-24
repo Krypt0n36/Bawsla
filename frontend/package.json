@@ -20,6 +20,7 @@
     "react-scripts": "4.0.3",
     "react-spring": "^9.2.3",
     "react-transition-group": "^4.4.2",
+    "react-useanimations": "^2.0.6",
     "socket.io-client": "^4.1.2",
     "tailwindcss": "^2.1.4",
     "use-file-picker": "^0.2.1",

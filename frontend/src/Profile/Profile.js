@@ -11,11 +11,13 @@ import cookies from 'react-cookies';
 import { Map } from './../Map/Map';
 import globals from './../var';
 import { Link } from 'react-router-dom';
+import Loading from './../Loading/Loading';
+
 
 export default class Profile extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {id:undefined, cards: [], activeTab: 'listings' };
+        this.state = {fetchisLoading:true, id:undefined, cards: [], activeTab: 'listings' };
         this.activateTab = this.activateTab.bind(this);
     }
     componentDidMount() {
@@ -30,7 +32,7 @@ export default class Profile extends React.Component {
             fetch(`${globals.backend_url}/api/listing/fetch?owner_id=${this.state.id}`)
             .then(resp => resp.json())
             .then((result) => {
-                this.setState({ cards: result['data'] }, () => {
+                this.setState({ cards: result['data'] , fetchisLoading:false}, () => {
                     console.log(this.state.cards)
                 });
             })
@@ -109,6 +111,7 @@ export default class Profile extends React.Component {
                     </div>}
                     {this.state.activeTab=='listings'&&<div style={{ width: '100%', display: 'inline-flex', marginTop: '20px',boxSizing: 'border-box'}}>
                         <div style={{ display: 'inline-flex', width: '100%' }}>
+                            {this.state.fetchisLoading&&<Loading height="150px" />}
                             {this.state.cards.map(item => <div style={{ width: '25%', padding: '5px', boxSizing: 'border-box' }}><Card data={item} /></div>)}
                         </div>
                     </div>}

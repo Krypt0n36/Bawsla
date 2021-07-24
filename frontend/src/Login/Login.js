@@ -19,11 +19,12 @@ import FacebookIcon from './../icons/colored-facebook.svg';
 import { Navbar } from '../Navbar/Navbar';
 import './Login.css';
 import globals from './../var'
+import { Smartphone } from 'react-feather';
 
 class LoginForm extends React.Component{
     constructor(props){
         super(props)
-        this.state = {identifier:'', password:'', error:null}
+        this.state = {isButtonLoading:false, identifier:'', password:'', error:null}
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
 
@@ -32,10 +33,14 @@ class LoginForm extends React.Component{
         this.setState({[event.target.name]:event.target.value});
     }
     handleSubmit(){
+        this.setState({isButtonLoading:true}, ()=>{
+
+        
         fetch(`${globals.backend_url}/api/login?identifier=${this.state.identifier}&password=${this.state.password}`)
             .then(res => res.json())
             .then(
                 (result)=>{
+                    this.setState({isButtonLoading:false})
                     console.log(result);
                     if(result['status'] == 'error'){
                         this.setState({error:null})
@@ -66,6 +71,7 @@ class LoginForm extends React.Component{
                     console.log('ERROR : ' + error);
                 }
             )
+            })
     }
 
     render(){
@@ -88,16 +94,15 @@ class LoginForm extends React.Component{
                 <Textbox name="identifier" value={this.state.identifier} onChange={this.handleChange} style={{width:'100%', marginBottom:'10px', marginTop:'20px'}} placeholder="Email or Phone number.." />
                 <Textbox name="password"  value={this.state.password} onChange={this.handleChange} type="password"  style={{width:'100%', marginBottom:'20px'}} placeholder="Password.."/>
                 <Checkbox label="Remember me." /><Link style={{margin: 'auto',float: 'right'}} to="/reset">Lost your password?</Link>
-                <Button onClick={this.handleSubmit} variant="primary" style={{width:'100%', marginTop:'10px', marginBottom:'20px'}} value="Log in"/>
+                <Button isLoading={this.state.isButtonLoading} onClick={this.handleSubmit} variant="primary" style={{width:'100%', marginTop:'10px', marginBottom:'20px'}} value="Log in"/>
                 <div style={{textAlign:'center'}}>
-                <span style={{color:'rgb(162, 162, 162)'}}>OR</span><br></br><br></br>
+                <span style={{color:'rgb(162, 162, 162)'}}>Or</span><br></br><br></br>
                 <div style={{width:'100%', display:'inline-flex'}}>
-                    <Button innerPadding="15px" buttonLeftIcon={<img src={GoogleIcon} style={{width:'100%', height:'100%'}}/>} value="Sign in with Google" style={{width: '-webkit-fill-available', marginRight:'5px'}}/>
-                    <Button innerPadding="15px" buttonCenterIcon={<img src={AppleIcon} style={{width:'100%', height:'100%'}} />} style={{width:'50px',boxSizing:'border-box',   marginRight:'5px'}}/>
-                    <Button innerPadding="15px" buttonCenterIcon={<img src={FacebookIcon} style={{width:'100%', height:'100%'}} />} style={{width:'50px',boxSizing:'border-box',}} />
+                    <Button innerPadding="15px" buttonLeftIcon={<img src={FacebookIcon} style={{width:'100%', height:'100%'}} />} value="Login via Facebook" style={{width: '48%', boxSizing:'border-box'}} />
+                    <Button innerPadding="15px" buttonLeftIcon={<Smartphone style={{width:'100%', height:'100%'}}/>} value="Login via SMS" style={{width: '48%', boxSizing:'border-box', margin:'auto', marginRight:'0px'}}/>
 
                 </div><br></br><br></br>
-                <span style={{color:'rgb(162, 162, 162)'}}>Dont have an account ? <Link style={{fontWeight:'bold'}} to="/register" >REGISTER</Link></span>                
+                <span style={{color:'rgb(162, 162, 162)'}}>Dont have an account ? <Link style={{fontWeight:'bold'}} to="/register" >register now</Link></span>                
                 </div>
                 </div>
                 

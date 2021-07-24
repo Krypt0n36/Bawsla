@@ -9,15 +9,21 @@
     border-radius: 7px;
     display: inline-flex;
 }
-.alert.error{
-    background-color: #FFDADB;
-    border-color:#FFB4B7;
-}
+
+
 .alert-icon{
     box-sizing: border-box;
-    padding:15px;
-    width: 50px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+        margin-right: auto;
+        margin-left: auto;
+    margin-left: 10px;
+    border-radius: 7px;
+    margin-right: 10px;
 }
+
 .alert-icon>img{
     margin: auto;
 }
@@ -28,4 +34,22 @@
     padding-left:0px;
     font-size: 15px;
     color:#0e121a;
+}
+
+
+.alert.error{
+    background-color: #ffebec;
+    border-color:#FC454B;
+}
+.alert.error>.alert-icon{
+    background-color:#FC454B;
+    color:white;
+}
+
+.alert.warning{
+    background-color:#FEF8EE;
+    border:1px solid #F3A527;
+}
+.alert.warning>.alert-icon{
+    background-color:#F3A527;
 }

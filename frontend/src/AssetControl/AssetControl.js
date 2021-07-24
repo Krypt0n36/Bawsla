@@ -41,7 +41,7 @@ export default class AssetControl extends React.Component{
                     
                     <div style={{margin:'auto'}}>
                     <div style={{width:'100%', padding:'1%'}}>
-                    <h2><Link to="/dashboard">Dashoabrd</Link> / Apartmenet S4 La marsa</h2>  
+                    <h2><Link to="/dashboard">Dashboard</Link> / Apartmenet S4 La marsa</h2>  
                     </div>
                     <HostProp extended={true} />
 

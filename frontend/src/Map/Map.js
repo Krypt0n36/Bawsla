@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../Buttons/Buttons';
 import globals from './../var';
 
 
@@ -37,18 +38,18 @@ class Map extends React.Component{
         this.iframeLoad = this.iframeLoad.bind(this)
     }
     iframeLoad(e){
-        this.setState({iframe:e.target.contentWindow}, ()=>{
-            this.state.iframe.postMessage({lat: 36.8475901,
-                lng: 10.2009443});
-
-        });
+        const mapFrame = document.getElementById('map-frame')
+        mapFrame.contentWindow.postMessage({lat: 36.8475901,
+            lng: 10.2009443}, '*')
+        alert('done')
     }
     
     render(){
         return (
             <div style={this.props.style}>
-                <iframe onLoad={this.iframeLoad} src={`${globals.frontend_url}/location-marker.html`} style={{border:'none', borderRadius:'7px', width:'100%', height:'100%'}}>
+                <iframe id="map-frame" src={`${globals.frontend_url}/location-marker.html`} style={{border:'none', borderRadius:'7px', width:'100%', height:'100%'}}>
                 </iframe>
+                <Button value="show"  onClick={this.iframeLoad} />
             </div>
         );
     }

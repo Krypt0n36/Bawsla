@@ -22,6 +22,7 @@ import { Map } from './../Map/Map';
 import Inbox from '../Inbox/Inbox';
 import { Card } from '../Card/Card';
 import globals from './../var';
+import Alert from '../Alert/Alert';
 
 
 class StarBarDynamic extends React.Component {
@@ -400,21 +401,24 @@ export default class Single extends React.Component {
                             <Map style={{ height: '400px', marginTop: '20px' }} />
                         </Well>
                         <Well style={{ marginTop: '20px' }}>
-                            <h2 style={{ margin: '0' }}>Customers reviews</h2>
+                            <h2 style={{ margin: '0' }}>Customers reviews ({this.state.reviews.length})</h2>
                             <div>
                                 {this.state.reviews.map(item => <Review data={item} />)}
-                                <div style={{ width: '100%', textAlign: 'center' }}>
-                                    <Button variant="curvy" onClick={this.handleLoadMore} value="Show more" style={{ marginTop: '10px', marginBottom: '10px' }} />
-                                </div>
+                                {this.state.reviews.length==0&&<div style={{padding:'30px'}}><h3 style={{opacity:0.1, margin:'auto', width:'max-content'}}>There is no review yet.</h3></div>}
+                                
                             </div>
                         </Well>
-                        <Well style={{ marginTop: '20px', marginBottom:'20px' }}>
+                        <Well style={{ marginTop: '20px', marginBottom:'20px', position:'relative' }}>
                             <h2>Write a review</h2>
                             <span>Rating :</span><br></br>
                             <StarBarDynamic dim="20px" value={this.state.rating} onChange={this.handleChange} />
                             <span>Review body :</span>
                             <TextArea name="review_body" value={this.state.review_body} onChange={this.handleChange} style={{ width: '100%', height: '200px', marginTop: '5px' }} />
-                            <Button variant="primary" value="Post" style={{ marginTop: '10px' }} onClick={this.handleSubmitReview} />
+                            
+                            {cookies.load('user_id')?<Button variant="primary" value="Post" style={{ marginTop: '10px' }} onClick={this.handleSubmitReview} />:
+                            <Alert variant="warning" style={{ marginTop: '10px' }} >
+                            <span>You need to log in to write a review, <Link to="/login">Log in</Link>.</span>
+                            </Alert>}
                         </Well>
                     </div>
                     <div id="second-col" style={{ width: '30%', boxSizing: 'border-box', paddingLeft: '10px', width: '30%', height: '500px' }}>

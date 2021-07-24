@@ -175,3 +175,8 @@ padding-bottom: 40px;
     }
     
 }
+
+
+a:hover{
+    text-decoration: underline;
+}

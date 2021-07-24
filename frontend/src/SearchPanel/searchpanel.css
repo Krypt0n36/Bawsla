@@ -3,11 +3,10 @@
 
 
 .searchPanelBack{
-    background-color: rgba(203, 203, 203, 0.74);
     border-radius: 15px;
     box-sizing: border-box;
     padding:5px;
-    width: 70%;
+    width: 100%;
     margin:auto;
 }
 .searchPanel{

@@ -374,8 +374,8 @@ export default class HostProp extends React.Component{
 
             return(
                 <div style={{ borderRadius: '7px', width: '100%', position: 'relative' }}>
-            <div style={{ backgroundColor: 'black', boxSizing: 'border-box', paddingTop: '2px', paddingBottom: '2px', width: '100%', textAlign: 'center' }}>
-                <h2 style={{ color: 'white' }}>Post property</h2>
+            <div style={{ backgroundColor: 'black', boxSizing: 'border-box', paddingTop: '2px', paddingBottom: '2px', width: '100%', paddingLeft:'25px' }}>
+                <h2 style={{ color: 'white', fontWeight:100 }}>Post a new property</h2>
             </div>
             <div style={{ boxSizing: 'border-box', padding: '20px' }}>
             <div style={{width:'100%', padding:'5px', boxSizing:'border-box', marginBottom:'20px'}}>
