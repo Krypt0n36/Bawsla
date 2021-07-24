@@ -226,8 +226,8 @@
         ]
 
         let map;
-        let markers = [{lat: 36.8475901,
-                    lng: 10.2009443}];
+        let markers = [{lat: 36.8463117,
+                    lng: 10.1987404}];
 
         function update() {
             window.top.postMessage({lat:cords_lat,lng:cords_lng}, '*')
@@ -245,9 +245,12 @@
 
             const image = "http://bawsla.herokuapp.com/map-marker.svg";
 
+           
+            
             map.addListener('message', (e) => {
                 const data = e.data;
-                alert(data);
+                alert(e);    
+                console.log(e)
                 markers = data.markers;
                 for(let i=0; i<markers.length; i++){
                 marker = new google.maps.Marker({
