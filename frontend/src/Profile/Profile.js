@@ -108,6 +108,7 @@ export default class Profile extends React.Component {
 
                         </div>
 
+
                     </div>}
                     {this.state.activeTab=='listings'&&<div style={{ width: '100%', display: 'inline-flex', marginTop: '20px',boxSizing: 'border-box'}}>
                         <div style={{ display: 'inline-flex', width: '100%' }}>
