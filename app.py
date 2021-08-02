@@ -937,10 +937,6 @@ def wish_fetch():
     return {'status':'ok', 'data':new_data}        
 
 
-@app.errorhandler(404)
-def index(e):
-    return send_from_directory(app.static_folder, 'index.html')
-
 
 # SOCKET IO 
 
@@ -1072,5 +1068,9 @@ def chat_disconnect():
     db_toolkit.post_db(query)
     return 'ok'
 
+
+@app.errorhandler(404)
+def index(e):
+    return send_from_directory(app.static_folder, 'index.html')
 
 
