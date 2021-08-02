@@ -253,7 +253,7 @@ class InboxC extends React.Component {
         this.scrollDown = this.scrollDown.bind(this);
         this.convoContainerRef = React.createRef();
         this.markAsSeen = this.markAsSeen.bind(this)
-        socket = socketIOClient.io( {
+        socket = socketIOClient.io(globals.socketio_url, {
             auth: {
                 'identifier': cookies.load('user_id'),
                 'session_token': cookies.load('session_token')
